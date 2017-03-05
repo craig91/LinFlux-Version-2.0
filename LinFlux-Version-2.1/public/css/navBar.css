@@ -1,0 +1,33 @@
+#nav-ul {
+  list-style-type: none; /* Removes bullets from the <li> */
+  margin: 0; /* removes default browser settings for margin and padding */
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+  font-size: 25px;
+  font-family: 'Francois One', sans-serif;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block; /* makes the area (not just the links) clickable because they are displayed as block elements */
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #199DF8;
+}
+
+li a:hover:not(.active) {
+  background-color: #199DF8;
+}
+
+.active {
+  background-color: #4CAF50;
+}
