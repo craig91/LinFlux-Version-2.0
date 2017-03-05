@@ -1,15 +1,22 @@
 import React from 'react';
-import ReactBootstrap from 'react-bootstrap';
+import '../../public/css/navBar.css';
 
 
-export default React.createClass({
-    render: function (){
-        return(
-            <div> 
-               <h1> Nav </h1>
-            </div>
 
-        )
-    }
+const Nav = React.createClass({
+  render: function() {
+    return (
+      <div id="nav-wrapper">
+        <ul id="nav-ul">
+          <li><a className="active" href="">Sign out</a></li>
+          <li><a href="">Sign in</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Distros</a></li>
+        </ul>
+      </div>
+
+    )
+  }
 })
 
+export default Nav;
