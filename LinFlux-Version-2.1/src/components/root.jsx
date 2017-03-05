@@ -1,15 +1,15 @@
 import React from 'react';
 
-var Root = React.createClass({
+const Root = React.createClass({
 	render : function(){
 		return(
 			<div>
-			   
-	          
-			
+
+
+
 			<div id="container">
 
-			  {this.props.children}
+			  <p> Root </p>
 			</div>
 		    </div>
         )
