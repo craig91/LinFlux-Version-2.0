@@ -3,9 +3,10 @@
   margin: 0; /* removes default browser settings for margin and padding */
   padding: 0;
   overflow: hidden;
-  background-color: transparent;
+  background-color: red;
   font-size: 25px;
   font-family: 'Francois One', sans-serif;
+  background-color: transparent;
 }
 
 li {
@@ -29,5 +30,5 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: #4CAF50;
+  background-color: #199DF8;
 }
