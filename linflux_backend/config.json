@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "craig",
+    "password": "null",
+    "database": "linflux",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "craig",
+    "password": "null",
+    "database": "upNext",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "craig",
+    "password": "null",
+    "database": "upNext",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
