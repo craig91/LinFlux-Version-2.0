@@ -15,3 +15,15 @@ img.bg {
     margin-left: -512px;
   }
 }
+
+div.signUp {
+  background-color: #199DF8;
+  height: 50px;
+  width: 100px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+p#signUp-text {
+
+}
