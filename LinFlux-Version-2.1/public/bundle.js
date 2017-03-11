@@ -60,17 +60,21 @@
 	
 	var _nav2 = _interopRequireDefault(_nav);
 	
-	var _splash = __webpack_require__(234);
+	var _splash = __webpack_require__(238);
 	
 	var _splash2 = _interopRequireDefault(_splash);
 	
-	var _root = __webpack_require__(235);
+	var _root = __webpack_require__(239);
 	
 	var _root2 = _interopRequireDefault(_root);
 	
-	var _homePage = __webpack_require__(236);
+	var _homePage = __webpack_require__(240);
 	
 	var _homePage2 = _interopRequireDefault(_homePage);
+	
+	var _signUp = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/pages/signUp.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var _signUp2 = _interopRequireDefault(_signUp);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -81,6 +85,7 @@
 	    return _react2.default.createElement(
 	      'div',
 	      null,
+	      _react2.default.createElement(_nav2.default, null),
 	      this.props.children
 	    );
 	  }
@@ -93,10 +98,10 @@
 	    _reactRouter.Route,
 	    { path: '/', component: App },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _root2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'nav', component: _nav2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'root', component: _root2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'homePage', component: _homePage2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'splash', component: _splash2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'splash', component: _splash2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'signup', component: _signUp2.default })
 	  )
 	), document.getElementById('root'));
 
@@ -26580,7 +26585,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(237);
+	__webpack_require__(234);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -26641,136 +26646,13 @@
 /* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Splash = _react2.default.createClass({
-	  displayName: 'Splash',
-	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      ' Splash '
-	    );
-	  }
-	});
-	
-	exports.default = Splash;
-	
-	// export default React.createClass({
-	//   getInitialState: function(){
-	//     return {
-	//       text: 'Hello world'
-	//     }
-	//   },
-	//   render: function () {
-	//     return (
-	//       <div>
-	//          <h1>{this.state.text}</h1>
-	//          <form>
-	//              <input type="text" onChange={this.changeText} value={this.state.text} />
-	//               <button>change the text</button>
-	//          </form>
-	
-	//       </div>
-	//     )
-	//   },
-	//   changeText: function(e){
-	//     this.setState({text: e.target.value});
-	//   }
-	// })
-
-/***/ },
-/* 235 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Root = _react2.default.createClass({
-		displayName: "Root",
-	
-		render: function render() {
-			return _react2.default.createElement(
-				"div",
-				null,
-				_react2.default.createElement(
-					"div",
-					{ id: "container" },
-					_react2.default.createElement(
-						"p",
-						null,
-						" Root "
-					)
-				)
-			);
-		}
-	});
-	
-	exports.default = Root;
-
-/***/ },
-/* 236 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	__webpack_require__(241);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var HomePage = _react2.default.createClass({
-	  displayName: 'HomePage',
-	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'bg-color' },
-	      _react2.default.createElement('img', { src: "http://8-themes.com/wp-content/uploads/2015/12/Space_View_of_Saturn_with_its_moon_094903_-2208x1242.jpg", alt: 'bg', className: 'bg' })
-	    );
-	  }
-	});
-	
-	exports.default = HomePage;
-
-/***/ },
-/* 237 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(238);
+	var content = __webpack_require__(235);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(240)(content, {});
+	var update = __webpack_require__(237)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26787,21 +26669,21 @@
 	}
 
 /***/ },
-/* 238 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(239)();
+	exports = module.exports = __webpack_require__(236)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "#nav-ul {\n  list-style-type: none; /* Removes bullets from the <li> */\n  margin: 0; /* removes default browser settings for margin and padding */\n  padding: 0;\n  overflow: hidden;\n  background-color: transparent;\n  font-size: 25px;\n  font-family: 'Francois One', sans-serif;\n}\n\nli {\n  float: right;\n}\n\nli a {\n  display: block; /* makes the area (not just the links) clickable because they are displayed as block elements */\n  color: white;\n  text-align: center;\n  padding: 14px 16px;\n  text-decoration: none;\n}\n\nli a:hover {\n  background-color: #199DF8;\n}\n\nli a:hover:not(.active) {\n  background-color: #199DF8;\n}\n\n.active {\n  background-color: #4CAF50;\n}\n", ""]);
+	exports.push([module.id, "#nav-ul {\n  list-style-type: none; /* Removes bullets from the <li> */\n  margin: 0; /* removes default browser settings for margin and padding */\n  padding: 0;\n  overflow: hidden;\n  background-color: red;\n  font-size: 25px;\n  font-family: 'Francois One', sans-serif;\n  background-color: transparent;\n}\n\nli {\n  float: right;\n}\n\nli a {\n  display: block; /* makes the area (not just the links) clickable because they are displayed as block elements */\n  color: white;\n  text-align: center;\n  padding: 14px 16px;\n  text-decoration: none;\n}\n\nli a:hover {\n  background-color: #199DF8;\n}\n\nli a:hover:not(.active) {\n  background-color: #199DF8;\n}\n\n.active {\n  background-color: #199DF8;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 239 */
+/* 236 */
 /***/ function(module, exports) {
 
 	/*
@@ -26857,7 +26739,7 @@
 
 
 /***/ },
-/* 240 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -27109,6 +26991,142 @@
 
 
 /***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Splash = _react2.default.createClass({
+	  displayName: 'Splash',
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      ' Splash '
+	    );
+	  }
+	});
+	
+	exports.default = Splash;
+	
+	// export default React.createClass({
+	//   getInitialState: function(){
+	//     return {
+	//       text: 'Hello world'
+	//     }
+	//   },
+	//   render: function () {
+	//     return (
+	//       <div>
+	//          <h1>{this.state.text}</h1>
+	//          <form>
+	//              <input type="text" onChange={this.changeText} value={this.state.text} />
+	//               <button>change the text</button>
+	//          </form>
+	
+	//       </div>
+	//     )
+	//   },
+	//   changeText: function(e){
+	//     this.setState({text: e.target.value});
+	//   }
+	// })
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Root = _react2.default.createClass({
+		displayName: "Root",
+	
+		render: function render() {
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					"div",
+					{ id: "container" },
+					_react2.default.createElement(
+						"p",
+						null,
+						" Root "
+					)
+				)
+			);
+		}
+	});
+	
+	exports.default = Root;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(241);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var HomePage = _react2.default.createClass({
+	  displayName: 'HomePage',
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'bg-color' },
+	      _react2.default.createElement('img', { src: "http://8-themes.com/wp-content/uploads/2015/12/Space_View_of_Saturn_with_its_moon_094903_-2208x1242.jpg", alt: 'bg', className: 'bg' }),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'h-class-slogan' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'signUp' },
+	          _react2.default.createElement(
+	            'p',
+	            { id: 'signUp-text' },
+	            'Sign Up'
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = HomePage;
+
+/***/ },
 /* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -27118,7 +27136,7 @@
 	var content = __webpack_require__(242);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(240)(content, {});
+	var update = __webpack_require__(237)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27138,12 +27156,12 @@
 /* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(239)();
+	exports = module.exports = __webpack_require__(236)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "img.bg {\n  min-height: 100%;\n  min-width: 1024px;\n  width: 100%;\n  height: auto;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: -1;\n}\n\n@media screen and (max-width: 1024px) {\n  img.bg {\n    left: 50%;\n    margin-left: -512px;\n  }\n}\n", ""]);
+	exports.push([module.id, "img.bg {\n  min-height: 100%;\n  min-width: 1024px;\n  width: 100%;\n  height: auto;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: -1;\n}\n\n@media screen and (max-width: 1024px) {\n  img.bg {\n    left: 50%;\n    margin-left: -512px;\n  }\n}\n\ndiv.signUp {\n  background-color: #199DF8;\n  height: 50px;\n  width: 100px;\n  border-radius: 25px;\n  text-align: center;\n}\n\np#signUp-text {\n\n}\n", ""]);
 	
 	// exports
 
