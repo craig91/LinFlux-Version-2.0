@@ -8,7 +8,7 @@ const CreateUser = React.createClass({
     return { user: null }
   },
   handleSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
     {
       $.ajax({
         url: 'api/users',
@@ -39,7 +39,7 @@ const CreateUser = React.createClass({
             this.lastName = input;
           }} required/>
 
-          <button type="submit"> Sign Up </button>
+          <input type="submit" />
         </form>
       </div>
     )

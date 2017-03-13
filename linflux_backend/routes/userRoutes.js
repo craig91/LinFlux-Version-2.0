@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const User = require('../models').User;
+const models = require ('../models/index')
 
 // Get Everybody
 function allUsers(req, res) {
@@ -20,12 +21,42 @@ function oneUser(req, res) {
 
 // Edit a user
 function editUser(req, res) {
-    User.findById(req.params.id).then(function(Userinfo) {
-        Userinfo.update({firstName: req.body.firstName, lastName: req.body.lastName}).then(function(data) {
-            res.send(data)
+  console.log(req.body.firstName)
+  console.log(req.body.lastName)
+    User.findById(req.params.id)
+    .then(function(Userinfo) {
+        Userinfo.update({
+          firstName: req.body.firstName,
+          lastName: req.body.lastName
         })
-    })
+
+    }).then(function(data) {
+      res.send(data)
+  }).catch(function(error){
+    console.log('error:', error)
+  })
 }
+
+
+
+//
+//   router.put('/User/:id', function(req, res) {
+//   models.User.find({
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then(function(Users) {
+//     if(todo){
+//       todo.updateAttributes({
+//         firstName: req.body.firstName,
+//         lastName: req.body.lastName
+//       }).then(function(User) {
+//         res.send(User);
+//       });
+//     }
+//   });
+// });
+
 
 
 // Create a person
@@ -37,8 +68,12 @@ User.create({firstName: req.body.firstName, lastName: req.body.lastName}).then(f
 })
 }
 
-router.route('/').get(allUsers).post(createUser)
+router.route('/')
+.get(allUsers)
+.post(createUser)
 
-router.route('/:id').put(editUser).get(oneUser)
+router.route('/:id')
+.put(editUser)
+.get(oneUser)
 
 module.exports = router;
