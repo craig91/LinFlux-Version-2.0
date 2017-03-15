@@ -1,5 +1,5 @@
 const Sequelize = require('../models').Sequelize;
-const sequelize = require('../models').sequelize;
+// const sequelize = require('../models').sequelize;
 const User = require('../models').User;
 
 User.sync({force: true})
