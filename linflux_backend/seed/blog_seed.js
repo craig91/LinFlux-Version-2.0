@@ -1,8 +1,7 @@
 const Sequelize  = require('../models').Sequelize;
 const sequelize = require('../models').sequelize;
-
-
 const Blog = require('../models').Blog;
+
 
 Blog.sync({force: true})
 .then(()=> Blog.bulkCreate([
