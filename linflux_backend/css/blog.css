@@ -3,28 +3,26 @@ html, body {
     margin: 0px 0px;
 }
 
-#overlay {
+.hero-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hero-container:after {
+  content: '';
+  height: inherit;
   width: 100%;
   background-color: black;
-  position: relative;
-  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
 }
 
-#hero-container {
-    width: 100%;
-    z-index: 10;
-}
-
-
-#hero-container img {
-  width: 100%;
-  position: relative;
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 50%;
-  border: 3px solid black;
+.blog-text {
+  font-size: 40px;
+  max-width: 500px;
 }

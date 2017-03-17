@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const User = require('../models').User;
+const Article = require('../models').Article;
 const models = require ('../models/index')
 
 // Get Everybody
@@ -14,7 +15,10 @@ function allUsers(req, res) {
 
 // Get one user
 function oneUser(req, res) {
-    User.findById(req.params.id).then(function(oneUser) {
+    User.findById(req.params.id,{
+      include: [Article]
+    })
+    .then(function(oneUser) {
         res.send(oneUser)
     }).catch((err) => console.log('one User', error))
 }
@@ -38,24 +42,6 @@ function editUser(req, res) {
 }
 
 
-
-//
-//   router.put('/User/:id', function(req, res) {
-//   models.User.find({
-//     where: {
-//       id: req.params.id
-//     }
-//   }).then(function(Users) {
-//     if(todo){
-//       todo.updateAttributes({
-//         firstName: req.body.firstName,
-//         lastName: req.body.lastName
-//       }).then(function(User) {
-//         res.send(User);
-//       });
-//     }
-//   });
-// });
 
 
 

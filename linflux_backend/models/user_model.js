@@ -12,6 +12,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       isAlpha: true
     }
+  },{
+    classMethods: {
+      associate: function(models) {
+        User.hasMany(models.Article);
+      }
+    }
 });
   return User;
 };

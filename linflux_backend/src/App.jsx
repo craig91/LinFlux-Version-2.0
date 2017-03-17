@@ -6,7 +6,8 @@ import { IndexRoute, Link, Router, Route, browserHistory, hashHistory } from 're
 import Greeting from '../components/hello.jsx';
 import CreateUser from '../components/userForm.jsx';
 import EditUser from '../components/editUser.jsx';
-import Allblogs from '../components/all_blogs.jsx';
+import Article from '../components/articles.jsx';
+import OneUser from '../components/profile.jsx';
 
 import '../css/blog.css';
 // import '../css/reset.css';
@@ -28,7 +29,8 @@ ReactDOM.render (
       <IndexRoute component={Greeting} />
       <Route path='/userForm' component={CreateUser} />
       <Route path='/editUser/:id' component={EditUser} />
-      <Route path='/allBlogs' component={Allblogs} />
+      <Route path='/articles' component={Article} />
+      <Route path='/profile/:id' component={OneUser} />
     </Route>
   </Router>,
   document.getElementById('root')

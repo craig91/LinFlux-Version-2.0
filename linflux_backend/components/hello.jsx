@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router';
+import Article from './articles.jsx';
 
 
 const Greeting = React.createClass({
@@ -28,8 +29,7 @@ const Greeting = React.createClass({
         <div>{this.state.users.length === 0 ? "Loading...." : this.state.users.map(function(val, idx){
           return (
             <ul key={idx}>
-              <li>{val.firstName}</li>
-              <li>{val.lastName}</li>
+              <Link to={"/profile/" + val.id} key={idx}>  {val.firstName} {val.lastName} </Link>
             </ul>
           )
         })}</div>
