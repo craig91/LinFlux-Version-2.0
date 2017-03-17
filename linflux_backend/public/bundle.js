@@ -104,7 +104,7 @@
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _hello2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/userForm', component: _userForm2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/editUser/:id', component: _editUser2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/articles', component: _articles2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/articles/:id', component: _articles2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/profile/:id', component: _profile2.default })
 	  )
 	), document.getElementById('root'));
