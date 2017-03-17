@@ -29,7 +29,7 @@ ReactDOM.render (
       <IndexRoute component={Greeting} />
       <Route path='/userForm' component={CreateUser} />
       <Route path='/editUser/:id' component={EditUser} />
-      <Route path='/articles' component={Article} />
+      <Route path='/articles/:id' component={Article} />
       <Route path='/profile/:id' component={OneUser} />
     </Route>
   </Router>,
