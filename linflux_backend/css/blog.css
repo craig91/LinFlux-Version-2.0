@@ -1,0 +1,30 @@
+html, body {
+    overflow-x: hidden;
+    margin: 0px 0px;
+}
+
+#overlay {
+  width: 100%;
+  background-color: black;
+  position: relative;
+  z-index: 100;
+}
+
+#hero-container {
+    width: 100%;
+    z-index: 10;
+}
+
+
+#hero-container img {
+  width: 100%;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  border: 3px solid black;
+}
