@@ -8,6 +8,9 @@ import CreateUser from '../components/userForm.jsx';
 import EditUser from '../components/editUser.jsx';
 import Allblogs from '../components/all_blogs.jsx';
 
+import '../css/blog.css';
+// import '../css/reset.css';
+
 
 var App = React.createClass({
   render: function() {
