@@ -23,8 +23,19 @@ function OneArticle(req, res) {
   .catch((err) => console.log('one Article', error))
 }
 
+function addArticle(req, res) {
+  Article.create({
+    hero: req.body.hero,
+    title: req.body.title,
+    sDescript: req.body.sDescript
+  }).then(function(newArticle){
+    res.send(newArticle)
+  })
+}
+
 router.route('/')
 .get(allArticles)
+.post(addArticle)
 
 router.route('/:id')
 .get(OneArticle)
