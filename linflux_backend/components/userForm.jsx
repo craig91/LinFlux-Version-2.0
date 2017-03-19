@@ -24,6 +24,8 @@ const CreateUser = React.createClass({
         console.log(error)
       })
     }
+    console.log(this.firstName.value)
+    console.log(this.lastName.value)
   },
   render: function() {
     return(
