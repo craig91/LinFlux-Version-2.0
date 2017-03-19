@@ -8,6 +8,9 @@ import CreateUser from '../components/userForm.jsx';
 import EditUser from '../components/editUser.jsx';
 import Article from '../components/articles.jsx';
 import OneUser from '../components/profile.jsx';
+import Home from '../components/homepage.jsx';
+import Distros from '../components/distros.jsx';
+import ArticleForm from '../components/articleForm.jsx';
 
 import '../css/blog.css';
 // import '../css/reset.css';
@@ -26,7 +29,10 @@ var App = React.createClass({
 ReactDOM.render (
   <Router history={browserHistory}>
     <Route path='/' component={App}>
-      <IndexRoute component={Greeting} />
+      <IndexRoute component={Home} />
+      <Route path='/hello' component={Greeting} />
+      <Route path='/distros' component={Distros} />
+      <Route path='/articleform' component={ArticleForm} />
       <Route path='/userForm' component={CreateUser} />
       <Route path='/editUser/:id' component={EditUser} />
       <Route path='/articles/:id' component={Article} />
