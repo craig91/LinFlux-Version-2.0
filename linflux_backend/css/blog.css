@@ -26,3 +26,8 @@ html, body {
   font-size: 40px;
   max-width: 500px;
 }
+
+img {
+  height: 50px;
+  width: 50px;
+}
