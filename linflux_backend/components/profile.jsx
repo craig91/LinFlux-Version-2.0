@@ -21,7 +21,7 @@ const OneUser = React.createClass({
       console.log(data)
       this.setState({ user: data })
     })
-   }
+   }  
  },
   render: function(){
     console.log('users', this.state.user)
