@@ -76,7 +76,19 @@
 	
 	var _profile2 = _interopRequireDefault(_profile);
 	
-	__webpack_require__(239);
+	var _homepage = __webpack_require__(239);
+	
+	var _homepage2 = _interopRequireDefault(_homepage);
+	
+	var _distros = __webpack_require__(240);
+	
+	var _distros2 = _interopRequireDefault(_distros);
+	
+	var _articleForm = __webpack_require__(241);
+	
+	var _articleForm2 = _interopRequireDefault(_articleForm);
+	
+	__webpack_require__(242);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -101,7 +113,10 @@
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: App },
-	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _hello2.default }),
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _homepage2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/hello', component: _hello2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/distros', component: _distros2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/articleform', component: _articleForm2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/userForm', component: _userForm2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/editUser/:id', component: _editUser2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/articles/:id', component: _articles2.default }),
@@ -36996,6 +37011,8 @@
 	        console.log(error);
 	      });
 	    }
+	    console.log(this.firstName.value);
+	    console.log(this.lastName.value);
 	  },
 	
 	  render: function render() {
@@ -37210,13 +37227,237 @@
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(178);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Home = _react2.default.createClass({
+	  displayName: 'Home',
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'ul',
+	        null,
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          'Sign Up'
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          'Log In'
+	        ),
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/distros' },
+	          ' ',
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'Distros'
+	          ),
+	          ' '
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          'About'
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = Home;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(178);
+	
+	var _jquery = __webpack_require__(234);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Distros = _react2.default.createClass({
+	  displayName: 'Distros',
+	  getInitialState: function getInitialState() {
+	    return {
+	      distros: []
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+	
+	    {
+	      _jquery2.default.ajax({
+	        url: '/api/distros',
+	        type: 'GET'
+	      }).done(function (data) {
+	        console.log(data);
+	        _this.setState({ distros: data });
+	      });
+	    }
+	  },
+	
+	  render: function render() {
+	    console.log('distros', this.state.distros);
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        this.state.distros.length === 0 ? "Loading...." : this.state.distros.map(function (val, idx) {
+	          return _react2.default.createElement(
+	            'div',
+	            { key: idx },
+	            _react2.default.createElement('img', { src: val.dImage }),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              val.description
+	            )
+	          );
+	        })
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = Distros;
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _jquery = __webpack_require__(234);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _reactRouter = __webpack_require__(178);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ArticleForm = _react2.default.createClass({
+	  displayName: 'ArticleForm',
+	  getInitialState: function getInitialState() {
+	    return { article: null };
+	  },
+	  handleSubmit: function handleSubmit(event) {
+	    var _this = this;
+	
+	    {
+	      _jquery2.default.ajax({
+	        url: 'api/articles',
+	        type: 'POST',
+	        data: {
+	          hero: this.hero.value,
+	          title: this.title.value,
+	          sDescript: this.sDescript.value
+	        }
+	      }).done(function (data) {
+	        console.log(data);
+	        _this.setState({ article: data });
+	      }).catch(function (error) {
+	        console.log(error);
+	      });
+	    }
+	    console.log(this.hero.value);
+	    console.log(this.title.value);
+	    console.log(this.sDescript.value);
+	  },
+	
+	  render: function render() {
+	    var _this2 = this;
+	
+	    console.log(this.state.article);
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'form',
+	        { onSubmit: this.handleSubmit },
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          ' Article Image '
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.hero = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          ' Title of your article '
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.title = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          ' A short description of your article '
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.sDescript = input;
+	          }, required: true }),
+	        _react2.default.createElement('input', { type: 'submit' })
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = ArticleForm;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(240);
+	var content = __webpack_require__(243);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(242)(content, {});
+	var update = __webpack_require__(245)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -37233,21 +37474,21 @@
 	}
 
 /***/ },
-/* 240 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(241)();
+	exports = module.exports = __webpack_require__(244)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "html, body {\n    overflow-x: hidden;\n    margin: 0px 0px;\n}\n\n.hero-container {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n  background-size: cover;\n  background-position: center center;\n}\n\n.hero-container:after {\n  content: '';\n  height: inherit;\n  width: 100%;\n  background-color: black;\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.6;\n}\n\n.blog-text {\n  font-size: 40px;\n  max-width: 500px;\n}\n", ""]);
+	exports.push([module.id, "html, body {\n    overflow-x: hidden;\n    margin: 0px 0px;\n}\n\n.hero-container {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n  background-size: cover;\n  background-position: center center;\n}\n\n.hero-container:after {\n  content: '';\n  height: inherit;\n  width: 100%;\n  background-color: black;\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.6;\n}\n\n.blog-text {\n  font-size: 40px;\n  max-width: 500px;\n}\n\nimg {\n  height: 50px;\n  width: 50px;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 241 */
+/* 244 */
 /***/ function(module, exports) {
 
 	/*
@@ -37303,7 +37544,7 @@
 
 
 /***/ },
-/* 242 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
