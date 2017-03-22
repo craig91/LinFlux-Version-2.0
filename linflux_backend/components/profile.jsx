@@ -21,7 +21,7 @@ const OneUser = React.createClass({
       console.log(data)
       this.setState({ user: data })
     })
-   }  
+   }
  },
   render: function(){
     console.log('users', this.state.user)
@@ -31,6 +31,7 @@ const OneUser = React.createClass({
           return (
             <div key={idx}>
                <Link to={"/articles/" + val.id} key={idx}>{val.title}</Link>
+               <p>{val.firstName}</p>
             </div>
           )
       })}</div>
