@@ -36905,7 +36905,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _react = __webpack_require__(1);
@@ -36921,46 +36921,65 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Article = _react2.default.createClass({
-	    displayName: 'Article',
-	    getInitialState: function getInitialState() {
-	        return { articles: [] };
-	    },
-	    componentDidMount: function componentDidMount() {
-	        var _this = this;
+	  displayName: 'Article',
+	  getInitialState: function getInitialState() {
+	    return { articles: null };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
 	
-	        {
-	            _jquery2.default.ajax({
-	                url: '/api/articles',
-	                type: 'GET'
-	            }).done(function (data) {
-	                console.log(data);
-	                _this.setState({ articles: data });
-	            });
-	        }
-	    },
+	    _jquery2.default.ajax({
+	      url: '/api/articles/' + this.props.params.id,
+	      type: 'GET'
+	    }).done(function (data) {
+	      console.log(data);
+	      _this.setState({ articles: data });
+	    });
+	  },
 	
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	                'div',
-	                null,
-	                this.state.articles.length === 0 ? "Loading" : this.state.articles.map(function (val, idx) {
-	                    return _react2.default.createElement(
-	                        'div',
-	                        { key: idx },
-	                        _react2.default.createElement('div', { className: 'hero-container', style: { backgroundImage: 'url(' + val.hero + ')' } }),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'blog-text' },
-	                            'Nulla porttitor accumsan tincidunt. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.'
-	                        )
-	                    );
-	                })
-	            )
-	        );
+	  render: function render() {
+	    if (this.state.articles) {
+	      var article = this.state.articles;
+	      console.log(article);
+	      return _react2.default.createElement('div', { className: 'hero-container', style: { backgroundImage: 'url(' + article.hero + ')' } });
+	    } else {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        'Loading....'
+	      );
 	    }
+	
+	    // return (
+	    //     <div>
+	    //         <div>{this.state.articles === null
+	    //                 ? "Loading...."
+	    //                 : this.state.articles.map(function(val, idx) {
+	    //                     return (
+	    //                         <div key={idx}>
+	    //
+	    //
+	    //
+	    //                             <div className="hero-container" style={{backgroundImage: `url(${val.hero})` }}>
+	    //
+	    //                             </div>
+	    //                             <div className="blog-text">
+	    //                                 Nulla porttitor accumsan tincidunt. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.
+	    //
+	    //
+	    //                             </div>
+	    //
+	    //
+	    //
+	    //
+	    //
+	    //                         </div>
+	    //                     )
+	    //                 })}
+	    //         </div>
+	    //     </div>
+	    // )
+	  }
 	});
 	
 	exports.default = Article;
@@ -37214,6 +37233,11 @@
 	            _reactRouter.Link,
 	            { to: "/articles/" + val.id, key: idx },
 	            val.title
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            val.firstName
 	          )
 	        );
 	      })
@@ -37482,7 +37506,7 @@
 	
 	
 	// module
-	exports.push([module.id, "html, body {\n    overflow-x: hidden;\n    margin: 0px 0px;\n}\n\n.hero-container {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n  background-size: cover;\n  background-position: center center;\n}\n\n.hero-container:after {\n  content: '';\n  height: inherit;\n  width: 100%;\n  background-color: black;\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.6;\n}\n\n.blog-text {\n  font-size: 40px;\n  max-width: 500px;\n}\n\nimg {\n  height: 50px;\n  width: 50px;\n}\n", ""]);
+	exports.push([module.id, "html, body {\n    overflow-x: hidden;\n    margin: 0px 0px;\n}\n\n.hero-container {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center center;\n}\n\n.hero-container:after {\n  content: '';\n  height: inherit;\n  width: 100%;\n  background-color: black;\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.6;\n}\n\n.blog-text {\n  font-size: 40px;\n  max-width: 500px;\n}\n\nimg {\n  height: 50px;\n  width: 50px;\n}\n", ""]);
 	
 	// exports
 
