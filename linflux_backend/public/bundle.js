@@ -76,24 +76,27 @@
 	
 	var _profile2 = _interopRequireDefault(_profile);
 	
-	var _homepage = __webpack_require__(239);
+	var _homepage = __webpack_require__(240);
 	
 	var _homepage2 = _interopRequireDefault(_homepage);
 	
-	var _distros = __webpack_require__(240);
+	var _distros = __webpack_require__(241);
 	
 	var _distros2 = _interopRequireDefault(_distros);
 	
-	var _articleForm = __webpack_require__(241);
+	var _articleForm = __webpack_require__(242);
 	
 	var _articleForm2 = _interopRequireDefault(_articleForm);
 	
-	__webpack_require__(242);
+	var _profile_info = __webpack_require__(239);
+	
+	var _profile_info2 = _interopRequireDefault(_profile_info);
+	
+	__webpack_require__(243);
+	
+	__webpack_require__(247);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// import '../css/reset.css';
-	
 	
 	var App = _react2.default.createClass({
 	  displayName: 'App',
@@ -120,7 +123,8 @@
 	    _react2.default.createElement(_reactRouter.Route, { path: '/userForm', component: _userForm2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/editUser/:id', component: _editUser2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/articles/:id', component: _articles2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/profile/:id', component: _profile2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: '/profile/:id', component: _profile2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/profile-info/:id', component: _profile_info2.default })
 	  )
 	), document.getElementById('root'));
 
@@ -36949,40 +36953,40 @@
 	        'Loading....'
 	      );
 	    }
-	
-	    // return (
-	    //     <div>
-	    //         <div>{this.state.articles === null
-	    //                 ? "Loading...."
-	    //                 : this.state.articles.map(function(val, idx) {
-	    //                     return (
-	    //                         <div key={idx}>
-	    //
-	    //
-	    //
-	    //                             <div className="hero-container" style={{backgroundImage: `url(${val.hero})` }}>
-	    //
-	    //                             </div>
-	    //                             <div className="blog-text">
-	    //                                 Nulla porttitor accumsan tincidunt. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.
-	    //
-	    //
-	    //                             </div>
-	    //
-	    //
-	    //
-	    //
-	    //
-	    //                         </div>
-	    //                     )
-	    //                 })}
-	    //         </div>
-	    //     </div>
-	    // )
 	  }
 	});
 	
 	exports.default = Article;
+	
+	// return (
+	//     <div>
+	//         <div>{this.state.articles === null
+	//                 ? "Loading...."
+	//                 : this.state.articles.map(function(val, idx) {
+	//                     return (
+	//                         <div key={idx}>
+	//
+	//
+	//
+	//                             <div className="hero-container" style={{backgroundImage: `url(${val.hero})` }}>
+	//
+	//                             </div>
+	//                             <div className="blog-text">
+	//                                 Nulla porttitor accumsan tincidunt. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.
+	//
+	//
+	//                             </div>
+	//
+	//
+	//
+	//
+	//
+	//                         </div>
+	//                     )
+	//                 })}
+	//         </div>
+	//     </div>
+	// )
 
 /***/ },
 /* 236 */
@@ -37021,7 +37025,14 @@
 	        type: 'POST',
 	        data: {
 	          firstName: this.firstName.value,
-	          lastName: this.lastName.value
+	          lastName: this.lastName.value,
+	          company: this.company.value,
+	          contact: this.contact.value,
+	          website: this.website.value,
+	          linkedIn: this.linkedIn.value,
+	          facebook: this.facebook.value,
+	          twitter: this.twitter.value,
+	          github: this.github.value
 	        }
 	      }).done(function (data) {
 	        console.log(data);
@@ -37058,6 +37069,62 @@
 	        ),
 	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
 	            _this2.lastName = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Company'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.company = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Contact'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.company = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Website'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.company = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'LinkedIn'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.company = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Facebook'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.company = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Twitter'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.company = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Github'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.company = input;
 	          }, required: true }),
 	        _react2.default.createElement('input', { type: 'submit' })
 	      )
@@ -37195,6 +37262,10 @@
 	
 	var _reactRouter = __webpack_require__(178);
 	
+	var _profile_info = __webpack_require__(239);
+	
+	var _profile_info2 = _interopRequireDefault(_profile_info);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var OneUser = _react2.default.createClass({
@@ -37261,6 +37332,69 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _jquery = __webpack_require__(234);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ProfileInfo = _react2.default.createClass({
+	  displayName: 'ProfileInfo',
+	  getInitialState: function getInitialState() {
+	    return { user: null };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+	
+	    _jquery2.default.ajax({
+	      url: '/api/users/' + this.props.params.id,
+	      type: 'GET'
+	    }).done(function (data) {
+	      console.log(data);
+	      _this.setState({ user: data });
+	    });
+	  },
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      'HI'
+	    );
+	
+	    // if(this.state.user) {
+	    //   let profileInfo = this.state.user;
+	    //   console.log(profileInfo)
+	    //   return (
+	    //     <div>
+	    //       <p>{profileInfo.firstName}</p>
+	    //       <p>{profileInfo.lastName}</p>
+	    //     </div>
+	    //   )
+	    // } else {
+	    //   return (
+	    //     <div>Loading...</div>
+	    //   )
+	    // }
+	  }
+	});
+	
+	exports.default = ProfileInfo;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
 	var _reactRouter = __webpack_require__(178);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -37309,7 +37443,7 @@
 	exports.default = Home;
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37358,7 +37492,7 @@
 	      null,
 	      _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'distros_container' },
 	        this.state.distros.length === 0 ? "Loading...." : this.state.distros.map(function (val, idx) {
 	          return _react2.default.createElement(
 	            'div',
@@ -37379,7 +37513,7 @@
 	exports.default = Distros;
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37472,16 +37606,16 @@
 	exports.default = ArticleForm;
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(243);
+	var content = __webpack_require__(244);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(245)(content, {});
+	var update = __webpack_require__(246)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -37498,10 +37632,10 @@
 	}
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(244)();
+	exports = module.exports = __webpack_require__(245)();
 	// imports
 	
 	
@@ -37512,7 +37646,7 @@
 
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports) {
 
 	/*
@@ -37568,7 +37702,7 @@
 
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -37817,6 +37951,46 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
+
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(248);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(246)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!./distros_page.css", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!./distros_page.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(245)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".distros_container {\n  border: 1px solid black ;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: center;\n\n}\n", ""]);
+	
+	// exports
 
 
 /***/ }
