@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router';
+import ProfileInfo from './profile_info.jsx';
 
 
 const OneUser = React.createClass({
@@ -32,6 +33,7 @@ const OneUser = React.createClass({
             <div key={idx}>
                <Link to={"/articles/" + val.id} key={idx}>{val.title}</Link>
                <p>{val.firstName}</p>
+               {/* <ProfileInfo /> */}
             </div>
           )
       })}</div>
