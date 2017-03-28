@@ -11,9 +11,10 @@ import OneUser from '../components/profile.jsx';
 import Home from '../components/homepage.jsx';
 import Distros from '../components/distros.jsx';
 import ArticleForm from '../components/articleForm.jsx';
+import ProfileInfo from '../components/profile_info.jsx';
 
 import '../css/blog.css';
-// import '../css/reset.css';
+import '../css/distros_page.css';
 
 
 var App = React.createClass({
@@ -37,6 +38,7 @@ ReactDOM.render (
       <Route path='/editUser/:id' component={EditUser} />
       <Route path='/articles/:id' component={Article} />
       <Route path='/profile/:id' component={OneUser} />
+      <Route path='/profile-info/:id' component={ProfileInfo} />
     </Route>
   </Router>,
   document.getElementById('root')
