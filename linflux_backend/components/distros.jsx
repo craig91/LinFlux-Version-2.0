@@ -24,12 +24,15 @@ const Distros = React.createClass({
     console.log('distros', this.state.distros)
     return(
       <div>
-        <div>{this.state.distros.length === 0 ? "Loading...." : this.state.distros.map(function(val, idx) {
+        <div className="distros_container">{this.state.distros.length === 0 ? "Loading...." : this.state.distros.map(function(val, idx) {
           return (
-            <div key={idx}>
-              <img src={val.dImage}/> 
+
+          <div key={idx}>
+
+              <img src={val.dImage}/>
               <p>{val.description}</p>
-            </div>
+
+          </div>
           )
         })}</div>
       </div>
