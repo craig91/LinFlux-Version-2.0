@@ -15,8 +15,15 @@ const CreateUser = React.createClass({
         type: 'POST',
         data: {
           firstName: this.firstName.value,
-          lastName: this.lastName.value
-        }
+          lastName: this.lastName.value,
+          company: this.company.value,
+          contact: this.contact.value,
+          website: this.website.value,
+          linkedIn: this.linkedIn.value,
+          facebook: this.facebook.value,
+          twitter: this.twitter.value,
+          github: this.github.value
+       }
       }).done((data) => {
         console.log(data)
         this.setState({ user: data })
@@ -31,6 +38,7 @@ const CreateUser = React.createClass({
     return(
       <div>
         <form onSubmit={this.handleSubmit} >
+         
           <span>First Name</span>
           <input type="text" ref={(input) =>{
             this.firstName = input;
@@ -40,6 +48,42 @@ const CreateUser = React.createClass({
           <input type="text" ref={(input) =>{
             this.lastName = input;
           }} required/>
+
+          <span>Company</span>
+          <input type="text" ref={(input) => {
+            this.company = input;
+          }} required/>
+
+          <span>Contact</span>
+          <input type="text" ref={(input) => {
+            this.company = input;
+          }} required/>
+
+          <span>Website</span>
+          <input type="text" ref={(input) => {
+            this.company = input;
+          }} required/>
+
+          <span>LinkedIn</span>
+          <input type="text" ref={(input) => {
+            this.company = input;
+          }} required/>
+
+          <span>Facebook</span>
+          <input type="text" ref={(input) => {
+            this.company = input;
+          }} required/>
+          
+          <span>Twitter</span>
+          <input type="text" ref={(input) => {
+            this.company = input;
+          }} required/>
+         
+          <span>Github</span>
+          <input type="text" ref={(input) => {
+            this.company = input;
+          }} required/>
+
 
           <input type="submit" />
         </form>
