@@ -37640,7 +37640,7 @@
 	
 	
 	// module
-	exports.push([module.id, "html, body {\n    overflow-x: hidden;\n    margin: 0px 0px;\n}\n\n.hero-container {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center center;\n}\n\n.hero-container:after {\n  content: '';\n  height: inherit;\n  width: 100%;\n  background-color: black;\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.6;\n}\n\n.blog-text {\n  font-size: 40px;\n  max-width: 500px;\n}\n\nimg {\n  height: 50px;\n  width: 50px;\n}\n", ""]);
+	exports.push([module.id, "html, body {\n    overflow-x: hidden;\n    margin: 0px 0px;\n}\n\n.hero-container {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center center;\n}\n\n.hero-container:after {\n  content: '';\n  height: inherit;\n  width: 100%;\n  background-color: black;\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.6;\n}\n\n.blog-text {\n  font-size: 40px;\n  max-width: 500px;\n}\n\n", ""]);
 	
 	// exports
 
@@ -37988,7 +37988,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".distros_container {\n  border: 1px solid black ;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: center;\n\n}\n", ""]);
+	exports.push([module.id, ".distros_container {\n  border: 1px solid black ;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-around;  \n\n}\n\n.distros_container div {\n   width: 33%;\n   text-align: center;\n}\n\nimg {\n  height: auto;\n  width: 50%;\n}\n\n", ""]);
 	
 	// exports
 
