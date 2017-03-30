@@ -48,10 +48,15 @@ function editUser(req, res) {
 // Create a person
 
 function createUser(req, res) {
-User.create({firstName: req.body.firstName, lastName: req.body.lastName}).then(function(newUser) {
+User.create({
+    userName: req.body.userName,
+    firstName: req.body.firstName, 
+    lastName: req.body.lastName,
+    location: req.body.location
+  }).then(function(newUser) {
     console.log(newUser)
     res.send(newUser)
-})
+  })
 }
 
 router.route('/')

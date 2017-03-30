@@ -37024,18 +37024,29 @@
 	        url: 'api/users',
 	        type: 'POST',
 	        data: {
+	          userName: this.userName.value,
 	          firstName: this.firstName.value,
-	          lastName: this.lastName.value
+	          lastName: this.lastName.value,
+	          location: this.location.value
+	          // company: this.company.value,
+	          // contact: this.contact.value,
+	          // website: this.website.value,
+	          // linkedIn: this.linkedIn.value,
+	          // facebook: this.facebook.value,
+	          // twitter: this.twitter.value,
+	          // github: this.github.value
 	        }
 	      }).done(function (data) {
-	        console.log(data);
 	        _this.setState({ user: data });
+	        console.log(data);
 	      }).catch(function (error) {
 	        console.log(error);
 	      });
 	    }
+	    console.log(this.userName.value);
 	    console.log(this.firstName.value);
 	    console.log(this.lastName.value);
+	    console.log(this.location.value);
 	    // console.log(this.company.value)
 	    // console.log(this.contact.value)
 	  },
@@ -37052,6 +37063,14 @@
 	        _react2.default.createElement(
 	          'span',
 	          null,
+	          'Enter Your User Name'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', placeholder: '7 to 14 characters', ref: function ref(input) {
+	            _this2.userName = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
 	          'First Name'
 	        ),
 	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
@@ -37065,6 +37084,14 @@
 	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
 	            _this2.lastName = input;
 	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Location'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.location = input;
+	          } }),
 	        _react2.default.createElement('input', { type: 'submit' })
 	      )
 	    );

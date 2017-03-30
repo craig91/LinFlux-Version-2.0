@@ -14,8 +14,10 @@ const CreateUser = React.createClass({
         url: 'api/users',
         type: 'POST',
         data: {
+          userName: this.userName.value,
           firstName: this.firstName.value,
           lastName: this.lastName.value,
+          location: this.location.value
           // company: this.company.value,
           // contact: this.contact.value,
           // website: this.website.value,
@@ -25,14 +27,16 @@ const CreateUser = React.createClass({
           // github: this.github.value
        }
       }).done((data) => {
-        console.log(data)
         this.setState({ user: data })
+        console.log(data)
       }).catch((error) => {
         console.log(error)
       })
     }
+    console.log(this.userName.value)
     console.log(this.firstName.value)
     console.log(this.lastName.value)
+    console.log(this.location.value)
     // console.log(this.company.value)
     // console.log(this.contact.value)
   },
@@ -41,6 +45,11 @@ const CreateUser = React.createClass({
       <div>
         <form onSubmit={this.handleSubmit} >
          
+          <span>Enter Your User Name</span>
+          <input type="text" placeholder="7 to 14 characters" ref={(input) => {
+            this.userName = input;
+          }} required/>
+
           <span>First Name</span>
           <input type="text" ref={(input) =>{
             this.firstName = input;
@@ -50,6 +59,11 @@ const CreateUser = React.createClass({
           <input type="text" ref={(input) =>{
             this.lastName = input;
           }} required/>
+
+          <span>Location</span>
+          <input type="text" ref={(input) =>{
+            this.location = input;
+          }}/>
 
           <input type="submit" />
         </form>

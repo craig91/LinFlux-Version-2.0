@@ -2,12 +2,25 @@
 
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
+    userName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      isAlpha: true,
+      len: [7, 14]
+    },
     firstName: {
      type: DataTypes.STRING,
       allowNull: false,
-      isAlpha: true
+      isAlpha: true,
+      len:[2, 50]
     },
     lastName: {
+     type: DataTypes.STRING,
+      allowNull: false,
+      isAlpha: true,
+      len:[2, 50]
+    },
+    location: {
      type: DataTypes.STRING,
       allowNull: false,
       isAlpha: true
