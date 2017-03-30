@@ -16,13 +16,13 @@ const CreateUser = React.createClass({
         data: {
           firstName: this.firstName.value,
           lastName: this.lastName.value,
-          company: this.company.value,
-          contact: this.contact.value,
-          website: this.website.value,
-          linkedIn: this.linkedIn.value,
-          facebook: this.facebook.value,
-          twitter: this.twitter.value,
-          github: this.github.value
+          // company: this.company.value,
+          // contact: this.contact.value,
+          // website: this.website.value,
+          // linkedIn: this.linkedIn.value,
+          // facebook: this.facebook.value,
+          // twitter: this.twitter.value,
+          // github: this.github.value
        }
       }).done((data) => {
         console.log(data)
@@ -33,6 +33,8 @@ const CreateUser = React.createClass({
     }
     console.log(this.firstName.value)
     console.log(this.lastName.value)
+    // console.log(this.company.value)
+    // console.log(this.contact.value)
   },
   render: function() {
     return(
@@ -49,42 +51,6 @@ const CreateUser = React.createClass({
             this.lastName = input;
           }} required/>
 
-          <span>Company</span>
-          <input type="text" ref={(input) => {
-            this.company = input;
-          }} required/>
-
-          <span>Contact</span>
-          <input type="text" ref={(input) => {
-            this.company = input;
-          }} required/>
-
-          <span>Website</span>
-          <input type="text" ref={(input) => {
-            this.company = input;
-          }} required/>
-
-          <span>LinkedIn</span>
-          <input type="text" ref={(input) => {
-            this.company = input;
-          }} required/>
-
-          <span>Facebook</span>
-          <input type="text" ref={(input) => {
-            this.company = input;
-          }} required/>
-          
-          <span>Twitter</span>
-          <input type="text" ref={(input) => {
-            this.company = input;
-          }} required/>
-         
-          <span>Github</span>
-          <input type="text" ref={(input) => {
-            this.company = input;
-          }} required/>
-
-
           <input type="submit" />
         </form>
       </div>
@@ -95,3 +61,40 @@ const CreateUser = React.createClass({
 
 
 export default CreateUser;
+
+
+
+          // <span>Company</span>
+          // <input type="text" ref={(input) => {
+          //   this.company = input;
+          // }}/>
+
+          // <span>Contact</span>
+          // <input type="text" ref={(input) => {
+          //   this.company = input;
+          // }} required/>
+
+          // <span>Website</span>
+          // <input type="text" ref={(input) => {
+          //   this.company = input;
+          // }} />
+
+          // <span>LinkedIn</span>
+          // <input type="text" ref={(input) => {
+          //   this.company = input;
+          // }} />
+
+          // <span>Facebook</span>
+          // <input type="text" ref={(input) => {
+          //   this.company = input;
+          // }} />
+          
+          // <span>Twitter</span>
+          // <input type="text" ref={(input) => {
+          //   this.company = input;
+          // }} />
+         
+          // <span>Github</span>
+          // <input type="text" ref={(input) => {
+          //   this.company = input;
+          // }} />
