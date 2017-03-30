@@ -37025,14 +37025,7 @@
 	        type: 'POST',
 	        data: {
 	          firstName: this.firstName.value,
-	          lastName: this.lastName.value,
-	          company: this.company.value,
-	          contact: this.contact.value,
-	          website: this.website.value,
-	          linkedIn: this.linkedIn.value,
-	          facebook: this.facebook.value,
-	          twitter: this.twitter.value,
-	          github: this.github.value
+	          lastName: this.lastName.value
 	        }
 	      }).done(function (data) {
 	        console.log(data);
@@ -37043,6 +37036,8 @@
 	    }
 	    console.log(this.firstName.value);
 	    console.log(this.lastName.value);
+	    // console.log(this.company.value)
+	    // console.log(this.contact.value)
 	  },
 	
 	  render: function render() {
@@ -37070,62 +37065,6 @@
 	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
 	            _this2.lastName = input;
 	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Company'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.company = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Contact'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.company = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Website'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.company = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'LinkedIn'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.company = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Facebook'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.company = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Twitter'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.company = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Github'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.company = input;
-	          }, required: true }),
 	        _react2.default.createElement('input', { type: 'submit' })
 	      )
 	    );
@@ -37133,6 +37072,41 @@
 	});
 	
 	exports.default = CreateUser;
+	
+	// <span>Company</span>
+	// <input type="text" ref={(input) => {
+	//   this.company = input;
+	// }}/>
+	
+	// <span>Contact</span>
+	// <input type="text" ref={(input) => {
+	//   this.company = input;
+	// }} required/>
+	
+	// <span>Website</span>
+	// <input type="text" ref={(input) => {
+	//   this.company = input;
+	// }} />
+	
+	// <span>LinkedIn</span>
+	// <input type="text" ref={(input) => {
+	//   this.company = input;
+	// }} />
+	
+	// <span>Facebook</span>
+	// <input type="text" ref={(input) => {
+	//   this.company = input;
+	// }} />
+	
+	// <span>Twitter</span>
+	// <input type="text" ref={(input) => {
+	//   this.company = input;
+	// }} />
+	
+	// <span>Github</span>
+	// <input type="text" ref={(input) => {
+	//   this.company = input;
+	// }} />
 
 /***/ },
 /* 237 */
