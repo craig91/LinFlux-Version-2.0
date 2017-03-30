@@ -3,6 +3,17 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;  
 
 }
+
+.distros_container div {
+   width: 33%;
+   text-align: center;
+}
+
+img {
+  height: auto;
+  width: 50%;
+}
+
