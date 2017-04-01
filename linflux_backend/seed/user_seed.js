@@ -7,42 +7,48 @@ User.sync({force: true})
   userName: 'XxBkLyN sHoTsxX',
   firstName: 'Craig',
   lastName: 'Dejean', 
-  location: 'Brooklyn'
+  location: 'Brooklyn',
+  company: 'Spotify'
 },
 
 {
   userName: 'foxyKyot0',
   firstName: 'Ayuka',
   lastName: 'Niga',  
-  location: 'Kyoto'
+  location: 'Kyoto',
+  company: 'Japas'
 },
 
 {
   userName: 'NeuroManc3er',
   firstName: 'Kamil',
   lastName: 'Skorupa',
-  location: 'Poland'
+  location: 'Poland',
+  company: 'Brooklyn College'
 },
 
 {
   userName: 'Kayod3',
   firstName: 'Chris',
   lastName: 'Samuel',
-  location: 'Brooklyn'
+  location: 'Brooklyn',
+  company: 'Jet Blue'
 },
 
 {
   userName: 'BigNat',
   firstName: 'Nathaniel',
   lastName: 'Brown',
-  location: 'Bronx'
+  location: 'Bronx',
+  company: 'Construction'
 },
 
 {
   userName: 'SirLancelot',
   firstName: 'Lance',
   lastName: 'Jones',
-  location: 'Bronx'
+  location: 'Bronx',
+  company: 'Government'
 }
 
 // firstName: 'Lance',
