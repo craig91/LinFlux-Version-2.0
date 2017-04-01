@@ -37027,8 +37027,8 @@
 	          userName: this.userName.value,
 	          firstName: this.firstName.value,
 	          lastName: this.lastName.value,
-	          location: this.location.value
-	          // company: this.company.value,
+	          location: this.location.value,
+	          company: this.company.value
 	          // contact: this.contact.value,
 	          // website: this.website.value,
 	          // linkedIn: this.linkedIn.value,
@@ -37047,7 +37047,7 @@
 	    console.log(this.firstName.value);
 	    console.log(this.lastName.value);
 	    console.log(this.location.value);
-	    // console.log(this.company.value)
+	    console.log(this.company.value);
 	    // console.log(this.contact.value)
 	  },
 	
@@ -37091,6 +37091,14 @@
 	        ),
 	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
 	            _this2.location = input;
+	          } }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Where do you work?'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	            _this2.company = input;
 	          } }),
 	        _react2.default.createElement('input', { type: 'submit' })
 	      )
