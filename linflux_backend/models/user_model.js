@@ -25,6 +25,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       isAlpha: true
     },
+    company: {
+     type: DataTypes.STRING,
+      allowNull: false,
+       isAlpha: true
+    },
   },{
     classMethods: {
       associate: function(models) {
