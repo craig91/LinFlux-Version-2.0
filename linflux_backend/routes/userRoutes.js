@@ -52,7 +52,8 @@ User.create({
     userName: req.body.userName,
     firstName: req.body.firstName, 
     lastName: req.body.lastName,
-    location: req.body.location
+    location: req.body.location,
+    company: req.body.company
   }).then(function(newUser) {
     console.log(newUser)
     res.send(newUser)
