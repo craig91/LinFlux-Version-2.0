@@ -17,8 +17,8 @@ const CreateUser = React.createClass({
           userName: this.userName.value,
           firstName: this.firstName.value,
           lastName: this.lastName.value,
-          location: this.location.value
-          // company: this.company.value,
+          location: this.location.value,
+          company: this.company.value
           // contact: this.contact.value,
           // website: this.website.value,
           // linkedIn: this.linkedIn.value,
@@ -37,7 +37,7 @@ const CreateUser = React.createClass({
     console.log(this.firstName.value)
     console.log(this.lastName.value)
     console.log(this.location.value)
-    // console.log(this.company.value)
+    console.log(this.company.value)
     // console.log(this.contact.value)
   },
   render: function() {
@@ -64,6 +64,11 @@ const CreateUser = React.createClass({
           <input type="text" ref={(input) =>{
             this.location = input;
           }}/>
+
+          <span>Where do you work?</span>
+          <input type="text" ref={(input) => {
+            this.company = input;
+          }} />
 
           <input type="submit" />
         </form>
