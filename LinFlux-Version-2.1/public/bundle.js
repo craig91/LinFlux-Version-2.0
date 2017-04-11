@@ -72,11 +72,9 @@
 	
 	var _homePage2 = _interopRequireDefault(_homePage);
 	
-	var _signUp = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/pages/signUp.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	
-	var _signUp2 = _interopRequireDefault(_signUp);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// import Signup from './components/pages/signUp.jsx';
 	
 	var App = _react2.default.createClass({
 	  displayName: 'App',
@@ -100,8 +98,7 @@
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _root2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'root', component: _root2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'homePage', component: _homePage2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'splash', component: _splash2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'signup', component: _signUp2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'splash', component: _splash2.default })
 	  )
 	), document.getElementById('root'));
 
@@ -27161,7 +27158,7 @@
 	
 	
 	// module
-	exports.push([module.id, "img.bg {\n  min-height: 100%;\n  min-width: 1024px;\n  width: 100%;\n  height: auto;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: -1;\n}\n\n@media screen and (max-width: 1024px) {\n  img.bg {\n    left: 50%;\n    margin-left: -512px;\n  }\n}\n\ndiv.signUp {\n  background-color: #199DF8;\n  height: 50px;\n  width: 100px;\n  border-radius: 25px;\n  text-align: center;\n}\n\np#signUp-text {\n\n}\n", ""]);
+	exports.push([module.id, "img.bg {\n  min-height: 100%;\n  min-width: 1024px;\n  width: 100%;\n  height: auto;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: -1;\n}\n\n@media screen and (max-width: 1024px) {\n  img.bg {\n    left: 50%;\n    margin-left: -512px;\n  }\n}\n\ndiv.signUp {\n  background-color: #199DF8;\n  height: 50px;\n  width: 100px;\n  border-radius: 25px;\n  text-align: center;\n}\n\n/*p#signUp-text {\n\n}*/\n", ""]);
 	
 	// exports
 

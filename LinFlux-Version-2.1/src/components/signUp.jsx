@@ -5,7 +5,7 @@ const Signup = React.createClass({
   render: function() {
     return (
       <div>
-        <form onSubmit={}>
+        <form>
           <span>First Name</span>
             <input type="text"> </input>
           <span>Last Name</span>
