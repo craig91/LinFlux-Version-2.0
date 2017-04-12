@@ -1,0 +1,22 @@
+.home-body {
+  background-color: #266e9e;
+  height: 100vh;
+}
+
+.image_container {
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  position: relative;
+}
+
+.home_page_background {
+  position: relative;
+}
+
+
+/*.home_page_slogan {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}*/
