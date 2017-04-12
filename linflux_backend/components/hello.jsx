@@ -4,6 +4,7 @@ import {Link} from 'react-router';
 import Article from './articles.jsx';
 
 
+
 const Greeting = React.createClass({
   getInitialState() {
     return {
