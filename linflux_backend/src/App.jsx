@@ -12,9 +12,12 @@ import Home from '../components/homepage.jsx';
 import Distros from '../components/distros.jsx';
 import ArticleForm from '../components/articleForm.jsx';
 import ProfileInfo from '../components/profile_info.jsx';
+import NavBar from '../components/nav_bar.jsx';
 
 import '../css/blog.css';
 import '../css/distros_page.css';
+import '../css/nav_bar.css';
+import '../css/home_page.css';
 
 
 var App = React.createClass({
