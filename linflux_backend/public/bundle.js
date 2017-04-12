@@ -92,9 +92,17 @@
 	
 	var _profile_info2 = _interopRequireDefault(_profile_info);
 	
-	__webpack_require__(243);
+	var _nav_bar = __webpack_require__(243);
 	
-	__webpack_require__(247);
+	var _nav_bar2 = _interopRequireDefault(_nav_bar);
+	
+	__webpack_require__(244);
+	
+	__webpack_require__(248);
+	
+	__webpack_require__(250);
+	
+	__webpack_require__(252);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -36945,7 +36953,20 @@
 	    if (this.state.articles) {
 	      var article = this.state.articles;
 	      console.log(article);
-	      return _react2.default.createElement('div', { className: 'hero-container', style: { backgroundImage: 'url(' + article.hero + ')' } });
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'hero-container', style: { backgroundImage: 'url(' + article.hero + ')' } },
+	          ' '
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'blog-text' },
+	          'Nulla porttitor accumsan tincidunt. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.'
+	        )
+	      );
 	    } else {
 	      return _react2.default.createElement(
 	        'div',
@@ -37397,8 +37418,12 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
+	
+	var _Splash_back = __webpack_require__(255);
+	
+	var _image = _interopRequireWildcard(_Splash_back);
 	
 	var _react = __webpack_require__(1);
 	
@@ -37406,47 +37431,33 @@
 	
 	var _reactRouter = __webpack_require__(178);
 	
+	var _nav_bar = __webpack_require__(243);
+	
+	var _nav_bar2 = _interopRequireDefault(_nav_bar);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Home = _react2.default.createClass({
-	  displayName: 'Home',
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'ul',
-	        null,
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          'Sign Up'
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          'Log In'
-	        ),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/distros' },
-	          ' ',
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            'Distros'
-	          ),
-	          ' '
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          'About'
-	        )
-	      )
-	    );
-	  }
+	var Home = _react2.default.createClass({
+	    displayName: 'Home',
+	
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'home-body' },
+	            _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_nav_bar2.default, null)
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'image_container' },
+	                _react2.default.createElement('img', { className: 'home_page_background', src: _image.default })
+	            )
+	        );
+	    }
 	});
 	
 	exports.default = Home;
@@ -37618,13 +37629,84 @@
 /* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _hello = __webpack_require__(233);
+	
+	var _hello2 = _interopRequireDefault(_hello);
+	
+	var _articleForm = __webpack_require__(242);
+	
+	var _articleForm2 = _interopRequireDefault(_articleForm);
+	
+	var _distros = __webpack_require__(241);
+	
+	var _distros2 = _interopRequireDefault(_distros);
+	
+	var _userForm = __webpack_require__(236);
+	
+	var _userForm2 = _interopRequireDefault(_userForm);
+	
+	var _reactRouter = __webpack_require__(178);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var NavBar = _react2.default.createClass({
+	    displayName: 'NavBar',
+	
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'nav',
+	                null,
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/hello', className: 'active' },
+	                    'Hello'
+	                ),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/articleForm' },
+	                    'Article Form'
+	                ),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/distros' },
+	                    'Distros'
+	                ),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/userForm' },
+	                    'User Form'
+	                )
+	            )
+	        );
+	    }
+	});
+	
+	exports.default = NavBar;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(244);
+	var content = __webpack_require__(245);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(246)(content, {});
+	var update = __webpack_require__(247)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -37641,21 +37723,21 @@
 	}
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(245)();
+	exports = module.exports = __webpack_require__(246)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "html, body {\n    overflow-x: hidden;\n    margin: 0px 0px;\n}\n\n.hero-container {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center center;\n}\n\n.hero-container:after {\n  content: '';\n  height: inherit;\n  width: 100%;\n  background-color: black;\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.6;\n}\n\n.blog-text {\n  font-size: 40px;\n  max-width: 500px;\n}\n\n", ""]);
+	exports.push([module.id, "html, body {\n    overflow-x: hidden;\n    margin: 0px 0px;\n}\n\n.hero-container {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center center;\n}\n\n.hero-container:after {\n  content: '';\n  height: inherit;\n  width: 100%;\n  background-color: black;\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0.6;\n}\n\n.blog-text {\n  font-size: 40px;\n  max-width: 500px;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports) {
 
 	/*
@@ -37711,7 +37793,7 @@
 
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -37963,16 +38045,16 @@
 
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(248);
+	var content = __webpack_require__(249);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(246)(content, {});
+	var update = __webpack_require__(247)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -37989,18 +38071,105 @@
 	}
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(245)();
+	exports = module.exports = __webpack_require__(246)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".distros_container {\n  border: 1px solid black ;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-around;  \n\n}\n\n.distros_container div {\n   width: 33%;\n   text-align: center;\n}\n\nimg {\n  height: auto;\n  width: 50%;\n}\n\n", ""]);
+	exports.push([module.id, ".distros_container {\n  border: 1px solid black ;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-around;\n\n}\n\n.distros_container div {\n   width: 33%;\n   text-align: center;\n}\n\nimg {\n  height: auto;\n  width: 50%;\n}\n", ""]);
 	
 	// exports
 
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(251);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(247)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!./nav_bar.css", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!./nav_bar.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(246)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "nav {\n  list-style-type: none;\n  background-color: transparent;\n  float: right;\n  margin-top: 3%;\n}\n\nnav a{\n  font-size: 1.4rem;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  font-family: 'Source Sans Pro', sans-serif;\n  color: white;\n  text-align: center;\n  text-decoration: none;\n  padding: 14px 16px;\n}\n\nnav a:hover{\n  background-color: #199DF8;\n}\n\nnav a:hover:not(.active) {\n  background-color: #199DF8;\n}\n\n/*.active {\n  background-color: #199DF8;\n}*/\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(253);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(247)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!./home_page.css", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!./home_page.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 253 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(246)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".home-body {\n  background-color: #266e9e;\n  height: 100vh;\n}\n\n.image_container {\n  display: flex;\n  justify-content: center;\n  align-content: stretch;\n  position: relative;\n}\n\n.home_page_background {\n  position: relative;\n}\n\n\n/*.home_page_slogan {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}*/\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 254 */,
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "ecc7234e0fe45697904f6e3765410cc7.png";
 
 /***/ }
 /******/ ]);
