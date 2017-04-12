@@ -1,0 +1,29 @@
+nav {
+  list-style-type: none;
+  background-color: transparent;
+  float: right;
+  margin-top: 3%;
+}
+
+nav a{
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+nav a:hover{
+  background-color: #199DF8;
+}
+
+nav a:hover:not(.active) {
+  background-color: #199DF8;
+}
+
+/*.active {
+  background-color: #199DF8;
+}*/
