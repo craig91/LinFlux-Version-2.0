@@ -32,6 +32,26 @@ Distros.sync({force: true})
     dImage:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Ubuntustudio_v3_logo_only.svg/2000px-Ubuntustudio_v3_logo_only.svg.png',
     description: 'Ubuntu Studio'
   },
+  {
+    dImage:'http://blog.manjaro.org/wp-content/uploads/2012/08/logo.png',
+    description: 'Manjaro Linux'
+  },
+  {
+    dImage:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Zorin_OS.svg/2000px-Zorin_OS.svg.png',
+    description: 'Zorin OS'
+  },
+  {
+    dImage:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Elementary_logo.svg/1000px-Elementary_logo.svg.png',
+    description: 'Elementary OS'
+  },
+  {
+    dImage:'https://www.rosehosting.com/blog/wp-content/uploads/2016/04/centos_logo.png',
+    description: 'Cent OS'
+  },
+  {
+    dImage:'https://www.offensive-security.com/wp-content/uploads/2015/06/home-kali-slider-1.png',
+    description: 'Kali Linux'
+  },
 
 ]))
 
