@@ -5,22 +5,25 @@ User.sync({force: true})
 .then(()=> User.bulkCreate([
 {
   userName: 'XxBkLyN sHoTsxX',
+  password:'123',
   firstName: 'Craig',
-  lastName: 'Dejean', 
+  lastName: 'Dejean',
   location: 'Brooklyn',
   company: 'Spotify'
 },
 
 {
   userName: 'foxyKyot0',
+  password:'456',
   firstName: 'Ayuka',
-  lastName: 'Niga',  
+  lastName: 'Niga',
   location: 'Kyoto',
   company: 'Japas'
 },
 
 {
   userName: 'NeuroManc3er',
+  password:'789',
   firstName: 'Kamil',
   lastName: 'Skorupa',
   location: 'Poland',
@@ -29,6 +32,7 @@ User.sync({force: true})
 
 {
   userName: 'Kayod3',
+  password:'1011',
   firstName: 'Chris',
   lastName: 'Samuel',
   location: 'Brooklyn',
@@ -37,6 +41,7 @@ User.sync({force: true})
 
 {
   userName: 'BigNat',
+  password:'1122',
   firstName: 'Nathaniel',
   lastName: 'Brown',
   location: 'Bronx',
@@ -45,6 +50,7 @@ User.sync({force: true})
 
 {
   userName: 'SirLancelot',
+  password:'1234',
   firstName: 'Lance',
   lastName: 'Jones',
   location: 'Bronx',
@@ -62,6 +68,6 @@ User.sync({force: true})
 //   twitter:'',
 //   github: ''
 
-]))
+],{individualHooks: true}))
 
 .catch((err) => console.log(err));
