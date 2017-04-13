@@ -1,8 +1,9 @@
 nav {
   list-style-type: none;
   background-color: transparent;
-  float: right;
   margin-top: 3%;
+  position: absolute;
+  right: 0;
 }
 
 nav a{
