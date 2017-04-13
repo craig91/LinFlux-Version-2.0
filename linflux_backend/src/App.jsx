@@ -13,6 +13,7 @@ import Distros from '../components/distros.jsx';
 import ArticleForm from '../components/articleForm.jsx';
 import ProfileInfo from '../components/profile_info.jsx';
 import NavBar from '../components/nav_bar.jsx';
+import LoginForm from '../components/login.jsx';
 
 import '../css/blog.css';
 import '../css/distros_page.css';
@@ -35,6 +36,7 @@ ReactDOM.render (
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
       <Route path='/hello' component={Greeting} />
+      <Route path='/login' component={LoginForm} />
       <Route path='/distros' component={Distros} />
       <Route path='/articleform' component={ArticleForm} />
       <Route path='/userForm' component={CreateUser} />
