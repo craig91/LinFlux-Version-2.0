@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../models').User;
 const Article = require('../models').Article;
 const models = require ('../models/index')
+var passport = require('../config/passport');
 
 // Get Everybody
 function allUsers(req, res) {
@@ -50,19 +51,45 @@ function editUser(req, res) {
 function createUser(req, res) {
 User.create({
     userName: req.body.userName,
-    firstName: req.body.firstName, 
+    password: req.body.password,
+    firstName: req.body.firstName,
     lastName: req.body.lastName,
     location: req.body.location,
     company: req.body.company
   }).then(function(newUser) {
-    console.log(newUser)
-    res.send(newUser)
+      passport.authenticate('local', function(err, user, info) {
+        if(err) { return next(err); }
+        if(!user) { res.status(401).end(); return; }
+        req.logIn(user, function(err) {
+          if(err) { res.status(401).end(); return; }
+          res.send(JSON.stringify(user)).end();
+        });
+      })(req, res, next);
   })
+   .catch((err) => {
+     res.send(err).end();
+   });
+}
+
+function login(req, res, next) {
+  console.log('login')
+  passport.authenticate('local', function(err, user, info) {
+    console.log('user', user)
+    if (err) { return next(err); }
+    if (!user) { res.status(401).end(); return; }
+    req.logIn(user, function(err) {
+      if (err) { res.status(401).end(); return; }
+      res.send(JSON.stringify(user)).end();
+    });
+  })(req, res, next);
 }
 
 router.route('/')
 .get(allUsers)
 .post(createUser)
+
+router.route('/login')
+.post(login)
 
 router.route('/:id')
 .put(editUser)
