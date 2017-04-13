@@ -15,6 +15,7 @@ const CreateUser = React.createClass({
         type: 'POST',
         data: {
           userName: this.userName.value,
+          password: this.password.value,
           firstName: this.firstName.value,
           lastName: this.lastName.value,
           location: this.location.value,
@@ -34,6 +35,7 @@ const CreateUser = React.createClass({
       })
     }
     console.log(this.userName.value)
+    console.log(this.password.value)
     console.log(this.firstName.value)
     console.log(this.lastName.value)
     console.log(this.location.value)
@@ -44,10 +46,15 @@ const CreateUser = React.createClass({
     return(
       <div>
         <form onSubmit={this.handleSubmit} >
-         
+
           <span>Enter Your User Name</span>
           <input type="text" placeholder="7 to 14 characters" ref={(input) => {
             this.userName = input;
+          }} required/>
+
+          <span>Enter Your password</span>
+          <input type="text" placeholder="7 to 14 characters" ref={(input) => {
+            this.password = input;
           }} required/>
 
           <span>First Name</span>
@@ -107,12 +114,12 @@ export default CreateUser;
           // <input type="text" ref={(input) => {
           //   this.company = input;
           // }} />
-          
+
           // <span>Twitter</span>
           // <input type="text" ref={(input) => {
           //   this.company = input;
           // }} />
-         
+
           // <span>Github</span>
           // <input type="text" ref={(input) => {
           //   this.company = input;
