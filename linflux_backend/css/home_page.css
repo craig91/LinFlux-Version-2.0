@@ -1,22 +1,32 @@
 .home-body {
   background-color: #266e9e;
   height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
-.image_container {
-  display: flex;
-  justify-content: center;
-  align-content: stretch;
-  position: relative;
-}
 
 .home_page_background {
-  position: relative;
+  position: absolute;
+  right: 0;
+  bottom: -22%;
+  width: 50%;
+  opacity: 0.7;
 }
 
 
-/*.home_page_slogan {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}*/
+.home_page_slogan {
+  font-size: 4.4rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: 'Indie Flower', cursive;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 39%;
+  left: 8%;
+}
+
+.home_page_slogan:first-child {
+  color:red;
+}
