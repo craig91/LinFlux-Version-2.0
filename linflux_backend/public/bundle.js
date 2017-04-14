@@ -37101,7 +37101,7 @@
 	          null,
 	          'Enter Your password'
 	        ),
-	        _react2.default.createElement('input', { type: 'text', placeholder: '7 to 14 characters', ref: function ref(input) {
+	        _react2.default.createElement('input', { type: 'password', placeholder: '7 to 14 characters', ref: function ref(input) {
 	            _this2.password = input;
 	          }, required: true }),
 	        _react2.default.createElement(
@@ -39184,7 +39184,7 @@
 	          null,
 	          'Password'
 	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	        _react2.default.createElement('input', { type: 'password', ref: function ref(input) {
 	            _this2.password = input;
 	          }, required: true }),
 	        _react2.default.createElement('input', { type: 'submit' })
