@@ -36,7 +36,7 @@ const LoginForm = React.createClass({
           }} required/>
 
           <span>Password</span>
-          <input type="text" ref={(input) =>{
+          <input type="password" ref={(input) =>{
             this.password = input;
           }} required/>
 
