@@ -84,12 +84,21 @@ function login(req, res, next) {
   })(req, res, next);
 }
 
+function logout(req, res) {
+  console.log('<==== Log Out User ===>')
+  req.logout();
+  req.session.destroy();
+}
+
 router.route('/')
 .get(allUsers)
 .post(createUser)
 
 router.route('/login')
 .post(login)
+
+router.route('/logout')
+.get(logout)
 
 router.route('/:id')
 .put(editUser)
