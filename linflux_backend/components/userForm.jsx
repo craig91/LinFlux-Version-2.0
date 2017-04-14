@@ -53,7 +53,7 @@ const CreateUser = React.createClass({
           }} required/>
 
           <span>Enter Your password</span>
-          <input type="text" placeholder="7 to 14 characters" ref={(input) => {
+          <input type="password" placeholder="7 to 14 characters" ref={(input) => {
             this.password = input;
           }} required/>
 
