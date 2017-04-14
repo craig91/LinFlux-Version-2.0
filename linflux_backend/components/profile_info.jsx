@@ -9,7 +9,11 @@ const ProfileInfo = React.createClass({
   componentDidMount() {
       $.ajax({
         url: '/api/users/' + this.props.params.id,
-        type: 'GET'
+        type: 'GET',
+        data: {
+          userName: this.userName.value,
+          firstName: this.firstName.value
+        }
       })
       .done((data) => {
         console.log(data)
@@ -19,26 +23,35 @@ const ProfileInfo = React.createClass({
   } ,
   render: function() {
     return(
-        <div>HI</div>
+        <div>
+          <div>{this.state.user.length === 0 ? "loading..." : this.state.user.map(function(val, idx) {
+            return (
+              <div key={idx}>
+                <p>{val.userName}</p>
+              </div>
+            )
+          }) }</div>
+        </div>
     )
+    }
 
-    // if(this.state.user) {
-    //   let profileInfo = this.state.user;
-    //   console.log(profileInfo)
-    //   return (
-    //     <div>
-    //       <p>{profileInfo.firstName}</p>
-    //       <p>{profileInfo.lastName}</p>
-    //     </div>
-    //   )
-    // } else {
-    //   return (
-    //     <div>Loading...</div>
-    //   )
-    // }
-
-  }
-})
-
+  })
 
 export default ProfileInfo;
+
+
+
+
+//
+// if(this.state.user) {
+//   let profileInfo = this.state.user;
+//   console.log(profileInfo)
+//   return (
+//     <div>
+//       <p>{profileInfo.userName}</p>
+//       <p>{profileInfo.firstName}</p>
+//     </div>
+//   )
+// } else {
+//   return (
+//     <div>Loading...</div>
