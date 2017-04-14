@@ -1,4 +1,5 @@
 import React from 'react';
+import LogoutButton from './logout.jsx';
 
 
 const LoginForm = React.createClass({
@@ -41,7 +42,9 @@ const LoginForm = React.createClass({
 
 
           <input type="submit" />
+
         </form>
+        <LogoutButton />
       </div>
     )
   }
