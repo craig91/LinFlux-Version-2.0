@@ -24,6 +24,8 @@ function OneArticle(req, res) {
 }
 
 function addArticle(req, res) {
+  console.log("request", req, res);
+
   Article.create({
     hero: req.body.hero,
     title: req.body.title,
@@ -36,6 +38,7 @@ function addArticle(req, res) {
 router.route('/')
 .get(allArticles)
 .post(addArticle)
+
 
 router.route('/:id')
 .get(OneArticle)
