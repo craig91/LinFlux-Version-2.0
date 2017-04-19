@@ -1,17 +1,22 @@
-'use strict'
-
-module.exports = function(sequelize, DataTypes){
+'use strict';
+module.exports = function(sequelize, DataTypes) {
   var Distros = sequelize.define('Distros', {
     dImage: {
-      type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: false,
-      isAlpha: true,
+      isAlpha: true
     },
     description: {
-      type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: false,
       isAlpha: true
     }
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
+      }
+    }
   });
   return Distros;
-}
+};
