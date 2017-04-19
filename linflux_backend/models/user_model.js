@@ -5,42 +5,42 @@ const bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'))
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     userName: {
-      type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: false,
       isAlpha: true,
       len: [7, 14]
     },
     password: {
-      type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: false,
       isAlpha: true
     },
     firstName: {
-     type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: false,
       isAlpha: true,
       len:[2, 50]
     },
     lastName: {
-     type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: true,
       isAlpha: true,
       len:[2, 50]
     },
     location: {
-     type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: true,
       isAlpha: true
     },
     company: {
-     type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: true,
-       isAlpha: true
-    },
-  },{
+      sAlpha: true
+    }
+  }, {
     classMethods: {
       associate: function(models) {
-        User.hasMany(models.Article);
+        User.hasMany(models.Article)
       }
     },
     instanceMethods: {
@@ -65,69 +65,6 @@ module.exports = function(sequelize, DataTypes) {
         });
       }
     }
-});
+  });
   return User;
 };
-
-
-
-
-  //  location: {
-  //    type: DataTypes.STRING,
-  //     allowNull: false,
-  //     isAlpha: true
-  //   },
-  //   company: {
-  //    type: DataTypes.STRING,
-  //     allowNull: false,
-  //     isAlpha: true
-  //   },
-  //   contact: {
-  //    type: DataTypes.STRING,
-  //     allowNull: false,
-  //     isAlpha: true,
-  //     validate: {
-  //       isUrl: true
-  //     }
-  //   },
-  //   website: {
-  //    type: DataTypes.STRING,
-  //     allowNull: false,
-  //     isAlpha: true,
-  //     validate: {
-  //       isUrl: true
-  //     }
-  //   },
-  //   linkedIn: {
-  //    type: DataTypes.STRING,
-  //     allowNull: false,
-  //     isAlpha: true,
-  //     validate: {
-  //       isUrl: true
-  //     }
-  //   },
-  //   facebook: {
-  //    type: DataTypes.STRING,
-  //     allowNull: false,
-  //     isAlpha: true,
-  //     validate: {
-  //       isUrl: true
-  //     }
-  //   },
-  //   twitter: {
-  //    type: DataTypes.STRING,
-  //     allowNull: false,
-  //     isAlpha: true,
-  //     validate: {
-  //       isUrl: true
-  //     }
-  //   },
-  //   github: {
-  //    type: DataTypes.STRING,
-  //     allowNull: false,
-  //     isAlpha: true,
-  //     validate: {
-  //       isUrl: true
-  //     }
-  //   },
-  // },
