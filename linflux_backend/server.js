@@ -1,9 +1,10 @@
 var express = require('express');
-var session = require('express-session');
-var pgSession = require('connect-pg-simple')(session);
+var Session = require('express-session');
+var pgSession = require('connect-pg-simple')(Session);
 var passport = require('./config/passport');
 var path = require('path');
-var bodyparser = require('body-parser')
+var bodyparser = require('body-parser');
+const db = require('./models');
 
 
 var app = express();
@@ -14,9 +15,11 @@ var config = require('./config.json')[env];
 app.use(bodyparser.urlencoded({ extended: false }));
 
 // Session //
-app.use(session({
+app.use(Session({
   store: new pgSession({
-    conString: 'pg://' + config.username + ':' + config.password + '@' + config.host + '/' + config.database
+    conString: 'pg://' + config.username + ':' + config.password + '@' + config.host + '/' + config.database,
+    db: db.sequelize,
+      table: 'Session'
   }),
   secret: 'CAT_PLAYING_PIANO',
   resave: true,
