@@ -1,5 +1,4 @@
-'use strict'
-
+'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Article = sequelize.define('Article', {
     hero: {
@@ -11,19 +10,19 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     title: {
-      type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: false,
       isAlpha: true
     },
     sDescript: {
-      type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: false,
       isAlpha: true
     }
-  },{
+  }, {
     classMethods: {
       associate: function(models) {
-        Article.belongsTo(models.User);
+        Article.belongsTo(models.User)
       }
     }
   });
