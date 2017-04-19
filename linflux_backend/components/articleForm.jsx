@@ -14,7 +14,8 @@ const ArticleForm = React.createClass({
         data: {
           hero: this.hero.value,
           title: this.title.value,
-          sDescript: this.sDescript.value
+          sDescript: this.sDescript.value,
+          
         }
       }).done((data) => {
         console.log(data)
