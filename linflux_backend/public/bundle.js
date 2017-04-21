@@ -96,7 +96,7 @@
 	
 	var _nav_bar2 = _interopRequireDefault(_nav_bar);
 	
-	var _login = __webpack_require__(264);
+	var _login = __webpack_require__(253);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
@@ -38614,20 +38614,6 @@
 	});
 	
 	exports.default = ProfileInfo;
-	
-	//
-	// if(this.state.user) {
-	//   let profileInfo = this.state.user;
-	//   console.log(profileInfo)
-	//   return (
-	//     <div>
-	//       <p>{profileInfo.userName}</p>
-	//       <p>{profileInfo.firstName}</p>
-	//     </div>
-	//   )
-	// } else {
-	//   return (
-	//     <div>Loading...</div>
 
 /***/ }),
 /* 248 */
@@ -38726,7 +38712,7 @@
 	
 	var _userForm2 = _interopRequireDefault(_userForm);
 	
-	var _login = __webpack_require__(264);
+	var _login = __webpack_require__(253);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
@@ -38734,7 +38720,7 @@
 	
 	var _profile2 = _interopRequireDefault(_profile);
 	
-	var _reactModal = __webpack_require__(253);
+	var _reactModal = __webpack_require__(255);
 	
 	var _reactModal2 = _interopRequireDefault(_reactModal);
 	
@@ -38986,24 +38972,151 @@
 /* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(254);
+	'use strict';
 	
-
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _logout = __webpack_require__(254);
+	
+	var _logout2 = _interopRequireDefault(_logout);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var LoginForm = _react2.default.createClass({
+	  displayName: 'LoginForm',
+	  getInitialState: function getInitialState() {
+	    return { user: null };
+	  },
+	  handleSubmit: function handleSubmit(event) {
+	    var _this = this;
+	
+	    event.preventDefault();
+	    {
+	      $.ajax({
+	        url: 'api/users/login',
+	        type: 'POST',
+	        data: {
+	          userName: this.userName.value,
+	          password: this.password.value
+	        }
+	      }).done(function (data) {
+	        _this.setState({ user: data });
+	        console.log(data);
+	      }).catch(function (error) {
+	        console.log(error);
+	      });
+	    }
+	    console.log(this.userName.value);
+	  },
+	
+	  render: function render() {
+	    var _this2 = this;
+	
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'form',
+	        { onSubmit: this.handleSubmit },
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Enter Your User Name'
+	        ),
+	        _react2.default.createElement('input', { type: 'text', placeholder: '7 to 14 characters', ref: function ref(input) {
+	            _this2.userName = input;
+	          }, required: true }),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          'Password'
+	        ),
+	        _react2.default.createElement('input', { type: 'password', ref: function ref(input) {
+	            _this2.password = input;
+	          }, required: true }),
+	        _react2.default.createElement('input', { type: 'submit' })
+	      ),
+	      _react2.default.createElement(_logout2.default, null)
+	    );
+	  }
+	});
+	
+	exports.default = LoginForm;
 
 /***/ }),
 /* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var LogoutButton = _react2.default.createClass({
+	  displayName: 'LogoutButton',
+	  getInitialState: function getInitialState() {
+	    return { user: null };
+	  },
+	  handleLogout: function handleLogout(event) {
+	    // event.preventDefault();
+	    {
+	      $.ajax({
+	        url: 'api/users/logout',
+	        type: 'GET'
+	      });
+	    }
+	  },
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'button',
+	        { onClick: this.handleLogout },
+	        'LogOut'
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = LogoutButton;
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(256);
+	
+
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(process) {var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(36);
 	var PropTypes = __webpack_require__(185);
-	var ExecutionEnvironment = __webpack_require__(255);
-	var ModalPortal = React.createFactory(__webpack_require__(256));
-	var ariaAppHider = __webpack_require__(261);
-	var refCount = __webpack_require__(262);
-	var elementClass = __webpack_require__(263);
+	var ExecutionEnvironment = __webpack_require__(257);
+	var ModalPortal = React.createFactory(__webpack_require__(258));
+	var ariaAppHider = __webpack_require__(263);
+	var refCount = __webpack_require__(264);
+	var elementClass = __webpack_require__(265);
 	var renderSubtreeIntoContainer = __webpack_require__(36).unstable_renderSubtreeIntoContainer;
-	var Assign = __webpack_require__(260);
+	var Assign = __webpack_require__(262);
 	var createReactClass = __webpack_require__(190)
 	
 	var SafeHTMLElement = ExecutionEnvironment.canUseDOM ? window.HTMLElement : {};
@@ -39164,7 +39277,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 255 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -39209,14 +39322,14 @@
 
 
 /***/ }),
-/* 256 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	var div = React.DOM.div;
-	var focusManager = __webpack_require__(257);
-	var scopeTab = __webpack_require__(259);
-	var Assign = __webpack_require__(260);
+	var focusManager = __webpack_require__(259);
+	var scopeTab = __webpack_require__(261);
+	var Assign = __webpack_require__(262);
 	var createReactClass = __webpack_require__(190);
 	
 	// so that our CSS is statically analyzable
@@ -39421,10 +39534,10 @@
 
 
 /***/ }),
-/* 257 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(258);
+	var findTabbable = __webpack_require__(260);
 	var focusLaterElements = [];
 	var modalElement = null;
 	var needToFocus = false;
@@ -39495,7 +39608,7 @@
 
 
 /***/ }),
-/* 258 */
+/* 260 */
 /***/ (function(module, exports) {
 
 	/*!
@@ -39551,10 +39664,10 @@
 
 
 /***/ }),
-/* 259 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(258);
+	var findTabbable = __webpack_require__(260);
 	
 	module.exports = function(node, event) {
 	  var tabbable = findTabbable(node);
@@ -39576,7 +39689,7 @@
 
 
 /***/ }),
-/* 260 */
+/* 262 */
 /***/ (function(module, exports) {
 
 	/**
@@ -40219,7 +40332,7 @@
 
 
 /***/ }),
-/* 261 */
+/* 263 */
 /***/ (function(module, exports) {
 
 	var _element = typeof document !== 'undefined' ? document.body : null;
@@ -40267,7 +40380,7 @@
 
 
 /***/ }),
-/* 262 */
+/* 264 */
 /***/ (function(module, exports) {
 
 	var modals = [];
@@ -40292,7 +40405,7 @@
 
 
 /***/ }),
-/* 263 */
+/* 265 */
 /***/ (function(module, exports) {
 
 	module.exports = function(opts) {
@@ -40355,133 +40468,6 @@
 	  else this.add(className)
 	}
 
-
-/***/ }),
-/* 264 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _logout = __webpack_require__(265);
-	
-	var _logout2 = _interopRequireDefault(_logout);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var LoginForm = _react2.default.createClass({
-	  displayName: 'LoginForm',
-	  getInitialState: function getInitialState() {
-	    return { user: null };
-	  },
-	  handleSubmit: function handleSubmit(event) {
-	    var _this = this;
-	
-	    event.preventDefault();
-	    {
-	      $.ajax({
-	        url: 'api/users/login',
-	        type: 'POST',
-	        data: {
-	          userName: this.userName.value,
-	          password: this.password.value
-	        }
-	      }).done(function (data) {
-	        _this.setState({ user: data });
-	        console.log(data);
-	      }).catch(function (error) {
-	        console.log(error);
-	      });
-	    }
-	    console.log(this.userName.value);
-	  },
-	
-	  render: function render() {
-	    var _this2 = this;
-	
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'form',
-	        { onSubmit: this.handleSubmit },
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Enter Your User Name'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', placeholder: '7 to 14 characters', ref: function ref(input) {
-	            _this2.userName = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Password'
-	        ),
-	        _react2.default.createElement('input', { type: 'password', ref: function ref(input) {
-	            _this2.password = input;
-	          }, required: true }),
-	        _react2.default.createElement('input', { type: 'submit' })
-	      ),
-	      _react2.default.createElement(_logout2.default, null)
-	    );
-	  }
-	});
-	
-	exports.default = LoginForm;
-
-/***/ }),
-/* 265 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var LogoutButton = _react2.default.createClass({
-	  displayName: 'LogoutButton',
-	  getInitialState: function getInitialState() {
-	    return { user: null };
-	  },
-	  handleLogout: function handleLogout(event) {
-	    // event.preventDefault();
-	    {
-	      $.ajax({
-	        url: 'api/users/logout',
-	        type: 'GET'
-	      });
-	    }
-	  },
-	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'button',
-	        { onClick: this.handleLogout },
-	        'LogOut'
-	      )
-	    );
-	  }
-	});
-	
-	exports.default = LogoutButton;
 
 /***/ }),
 /* 266 */
