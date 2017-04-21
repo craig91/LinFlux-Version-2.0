@@ -2,7 +2,7 @@ const router = require('express').Router();
 const User = require('../models').User;
 const Article = require('../models').Article;
 const models = require ('../models/index')
-var passport = require('../config/passport');
+var passport = require('../passport-config/passport');
 
 // Get Everybody
 function allUsers(req, res) {
