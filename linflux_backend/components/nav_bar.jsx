@@ -3,6 +3,8 @@ import Greeting from './hello.jsx';
 import ArticleForm from './articleForm.jsx';
 import Distros from './distros.jsx';
 import CreateUser from './userForm.jsx';
+import LoginForm from './login.jsx';
+import OneUser from './profile.jsx';
 import Modal from 'react-modal';
 import {Link} from 'react-router';
 
@@ -40,6 +42,8 @@ const NavBar = React.createClass({
         return (
             <div>
                 <nav>
+                    <Link to="/profile/">My Profile</Link>
+                    <Link to="/login">Login/Logout</Link>
                     <Link to="/hello" className="active">Hello</Link>
                     <Link to="/articleForm">Article Form</Link>
                     <Link to="/distros">Distros</Link>
