@@ -24,12 +24,13 @@ function OneArticle(req, res) {
 }
 
 function addArticle(req, res) {
-  console.log("request", req, res);
+  console.log("request", req.session);
 
   Article.create({
     hero: req.body.hero,
     title: req.body.title,
-    sDescript: req.body.sDescript
+    sDescript: req.body.sDescript,
+    UserId: req.session.passport.user
   }).then(function(newArticle){
     res.send(newArticle)
   })
