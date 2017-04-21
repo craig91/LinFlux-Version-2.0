@@ -16,13 +16,15 @@ function allUsers(req, res) {
 
 // Get one user
 function oneUser(req, res) {
-    User.findById(req.params.id,{
+    User.findById(req.session.passport.user,{
       include: [Article]
     })
     .then(function(oneUser) {
         res.send(oneUser)
     }).catch((err) => console.log('one User', error))
 }
+
+
 
 // Edit a user
 function editUser(req, res) {
@@ -72,9 +74,9 @@ User.create({
 }
 
 function login(req, res, next) {
-  console.log('login')
+  // console.log('login')
   passport.authenticate('local', function(err, user, info) {
-    console.log('user', user)
+    // console.log('user', user)
     if (err) { return next(err); }
     if (!user) { res.status(401).end(); return; }
     req.logIn(user, function(err) {
@@ -94,6 +96,7 @@ router.route('/')
 .get(allUsers)
 .post(createUser)
 
+
 router.route('/login')
 .post(login)
 
@@ -102,6 +105,9 @@ router.route('/logout')
 
 router.route('/:id')
 .put(editUser)
+
+
+router.route('/private')
 .get(oneUser)
 
 module.exports = router;
