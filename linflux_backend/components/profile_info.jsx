@@ -41,20 +41,3 @@ const ProfileInfo = React.createClass({
 })
 
 export default ProfileInfo;
-
-
-
-
-//
-// if(this.state.user) {
-//   let profileInfo = this.state.user;
-//   console.log(profileInfo)
-//   return (
-//     <div>
-//       <p>{profileInfo.userName}</p>
-//       <p>{profileInfo.firstName}</p>
-//     </div>
-//   )
-// } else {
-//   return (
-//     <div>Loading...</div>
