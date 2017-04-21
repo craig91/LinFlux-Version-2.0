@@ -1,3 +1,5 @@
+// For Mac
+
 {
   "development": {
     "username": "craig",
@@ -17,6 +19,32 @@
     "username": "craig",
     "password": "null",
     "database": "upNext",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
+
+
+// For Linux
+{
+  "development": {
+    "username": "craig",
+    "password": 123,
+    "database": "linflux",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "craig",
+    "password": 123,
+    "database": "linflux",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "craig",
+    "password": 123,
+    "database": "linflux",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
