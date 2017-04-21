@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "craig",
-    "password": 123,
+    "password": null,
     "database": "linflux",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "craig",
-    "password": 123,
+    "password": null,
     "database": "linflux",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "craig",
-    "password": 123,
+    "password": null,
     "database": "linflux",
     "host": "127.0.0.1",
     "dialect": "postgres"
