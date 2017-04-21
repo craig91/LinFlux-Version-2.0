@@ -38,21 +38,9 @@ const OneUser = React.createClass({
             })
           }
           </div>
-          <div>
+        <div>
             <ProfileInfo />
-            {/* {this.state.user === null ? 'Loading......' :
-              <div>
 
-                    <p>{this.state.user.userName}</p>
-                    <p>{this.state.user.firstName}</p>
-                    <p>{this.state.user.lastName}</p>
-                    <p>{this.state.user.company}</p>
-                    <p>{this.state.user.location}</p>
-
-
-              </div>
-
-          } */}
         </div>
     </div>
   )
