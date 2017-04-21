@@ -136,7 +136,7 @@
 	    _react2.default.createElement(_reactRouter.Route, { path: '/userForm', component: _userForm2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/editUser/:id', component: _editUser2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/articles/:id', component: _articles2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/profile/:id', component: _profile2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/profile/', component: _profile2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/profile-info/:id', component: _profile_info2.default })
 	  )
 	), document.getElementById('root'));
@@ -38491,8 +38491,8 @@
 	  componentDidMount: function componentDidMount() {
 	    var _this = this;
 	
-	    var apiCall = '/api/users/' + this.props.params.id;
-	    console.log(apiCall);
+	    var apiCall = '/api/users/private';
+	    // console.log(apiCall)
 	    {
 	      _jquery2.default.ajax({
 	        url: apiCall,
@@ -38509,25 +38509,28 @@
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      this.state.user === null ? 'Loading......' : this.state.user.Articles.map(function (val, idx) {
-	        return _react2.default.createElement(
-	          'div',
-	          { key: idx },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: "/articles/" + val.id, key: idx },
-	            val.title
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            val.firstName
-	          )
-	        );
-	      })
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        this.state.user === null ? 'Loading......' : this.state.user.Articles.map(function (val, idx) {
+	          return _react2.default.createElement(
+	            'div',
+	            { key: idx },
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: "/articles/" + val.id, key: idx },
+	              val.title
+	            )
+	          );
+	        })
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_profile_info2.default, null)
+	      )
 	    );
-	  }
-	});
+	  } });
 	
 	exports.default = OneUser;
 
@@ -38554,46 +38557,60 @@
 	var ProfileInfo = _react2.default.createClass({
 	  displayName: 'ProfileInfo',
 	  getInitialState: function getInitialState() {
-	    return { user: null };
+	    return {
+	      user: null
+	    };
 	  },
 	  componentDidMount: function componentDidMount() {
 	    var _this = this;
 	
-	    _jquery2.default.ajax({
-	      url: '/api/users/' + this.props.params.id,
-	      type: 'GET',
-	      data: {
-	        userName: this.userName.value,
-	        firstName: this.firstName.value
-	      }
-	    }).done(function (data) {
-	      console.log(data);
-	      _this.setState({ user: data });
-	    });
+	    var apiCall = '/api/users/private';
+	    {
+	      _jquery2.default.ajax({
+	        url: apiCall,
+	        type: 'GET'
+	      }).done(function (data) {
+	        _this.setState({ user: data });
+	      });
+	    }
 	  },
 	
 	  render: function render() {
+	    console.log('users', this.state.user);
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(
+	      this.state.user === null ? 'Loading...' : _react2.default.createElement(
 	        'div',
 	        null,
-	        this.state.user.length === 0 ? "loading..." : this.state.user.map(function (val, idx) {
-	          return _react2.default.createElement(
-	            'div',
-	            { key: idx },
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              val.userName
-	            )
-	          );
-	        })
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.state.user.userName
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.state.user.firstName
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.state.user.lastName
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.state.user.company
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.state.user.location
+	        )
 	      )
 	    );
 	  }
-	
 	});
 	
 	exports.default = ProfileInfo;
@@ -38709,6 +38726,14 @@
 	
 	var _userForm2 = _interopRequireDefault(_userForm);
 	
+	var _login = __webpack_require__(264);
+	
+	var _login2 = _interopRequireDefault(_login);
+	
+	var _profile = __webpack_require__(246);
+	
+	var _profile2 = _interopRequireDefault(_profile);
+	
 	var _reactModal = __webpack_require__(253);
 	
 	var _reactModal2 = _interopRequireDefault(_reactModal);
@@ -38756,6 +38781,16 @@
 	      _react2.default.createElement(
 	        'nav',
 	        null,
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/profile/' },
+	          'My Profile'
+	        ),
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/login' },
+	          'Login/Logout'
+	        ),
 	        _react2.default.createElement(
 	          _reactRouter.Link,
 	          { to: '/hello', className: 'active' },
