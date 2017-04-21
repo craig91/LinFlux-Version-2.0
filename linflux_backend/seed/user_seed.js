@@ -9,7 +9,7 @@ User.sync({force: true})
   firstName: 'Craig',
   lastName: 'Dejean',
   location: 'Brooklyn',
-  company: 'Spotify'
+  company: 'Google'
 },
 
 {
@@ -56,17 +56,6 @@ User.sync({force: true})
   location: 'Bronx',
   company: 'Government'
 }
-
-// firstName: 'Lance',
-//   lastName: 'Jones',
-//   location: 'Bronx',
-//   company: 'New York Department of Labor',
-//   contact: '',
-//   website:'',
-//   linkedIn: '',
-//   facebook:'',
-//   twitter:'',
-//   github: ''
 
 ],{individualHooks: true}))
 
