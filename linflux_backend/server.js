@@ -10,7 +10,7 @@ const db = require('./models');
 var app = express();
 var router = require('./routes/index.js')
 var env    = process.env.NODE_ENV || 'development';
-var config = require('./config.json')[env];
+var config = require('./config/config.json')[env];
 
 app.use(bodyparser.urlencoded({ extended: false }));
 
