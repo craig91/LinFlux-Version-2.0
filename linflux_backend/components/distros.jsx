@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router';
 import $ from 'jquery';
 
-const Distros = React.createClass({
-  getInitialState() {
-    return {
+class Distros extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
       distros: []
-    }
-  },
+    };
+  }
   componentDidMount() {
-    {
       $.ajax({
         url: '/api/distros',
         type: 'GET'
@@ -18,9 +18,8 @@ const Distros = React.createClass({
         console.log(data)
         this.setState({ distros: data })
       })
-    }
-  },
-  render: function() {
+  }
+  render() {
     console.log('distros', this.state.distros)
     return(
       <div>
@@ -38,6 +37,6 @@ const Distros = React.createClass({
       </div>
     )
   }
-})
+}
 
 export default Distros;

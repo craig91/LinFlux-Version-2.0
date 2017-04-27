@@ -2,11 +2,14 @@ import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router';
 
-const Article = React.createClass({
-    getInitialState() {
-        return {articles: null}
-    },
-    componentDidMount() {
+class Article extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      articles: null
+    }
+  }
+  componentDidMount() {
             $.ajax({
               url: '/api/articles/' + this.props.params.id,
               type: 'GET'
@@ -16,8 +19,8 @@ const Article = React.createClass({
                 this.setState({articles: data})
             })
 
-    },
-    render: function() {
+    }
+    render() {
            if(this.state.articles) {
              let article = this.state.articles;
              console.log(article)
@@ -41,7 +44,7 @@ const Article = React.createClass({
              )
            }
     }
-})
+}
 
 export default Article;
 

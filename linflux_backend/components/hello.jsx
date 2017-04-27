@@ -5,14 +5,14 @@ import Article from './articles.jsx';
 
 
 
-const Greeting = React.createClass({
-  getInitialState() {
-    return {
-      users: []
-    }
-  },
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: []
+    };
+  }
   componentDidMount() {
-   {
     $.ajax({
       url: '/api/users',
       type: 'GET'
@@ -21,9 +21,8 @@ const Greeting = React.createClass({
       console.log(data)
       this.setState({ users: data })
     })
-   }
- },
-  render: function(){
+ }
+  render() {
     console.log('users', this.state.users)
     return (
       <div>
@@ -39,7 +38,7 @@ const Greeting = React.createClass({
 
     )
   }
-})
+}
 
 
 export default Greeting

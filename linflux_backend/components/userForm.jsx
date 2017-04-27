@@ -3,13 +3,15 @@ import {Link} from 'react-router';
 import $ from 'jquery';
 
 
-const CreateUser = React.createClass({
-  getInitialState() {
-    return { user: null }
-  },
+class CreateUser extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null
+    };
+  }
   handleSubmit(event) {
     // event.preventDefault();
-    {
       $.ajax({
         url: 'api/users',
         type: 'POST',
@@ -34,7 +36,6 @@ const CreateUser = React.createClass({
       }).catch((error) => {
         console.log(error)
       })
-    }
     console.log(this.userName.value)
     console.log(this.userPhoto.value)
     console.log(this.password.value)
@@ -43,8 +44,8 @@ const CreateUser = React.createClass({
     console.log(this.location.value)
     console.log(this.company.value)
     // console.log(this.contact.value)
-  },
-  render: function() {
+  }
+  render() {
     return(
     <div className="form-master">
       <div className="form-container">
@@ -91,7 +92,7 @@ const CreateUser = React.createClass({
     </div>
     )
   }
-})
+}
 
 
 

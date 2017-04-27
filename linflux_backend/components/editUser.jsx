@@ -2,14 +2,15 @@ import React from 'react';
 import {Link} from 'react-router';
 import $ from 'jquery';
 
-const EditUser = React.createClass({
-    getInitialState() {
-        return {
-            firstName: "",
-            lastName: ""
-        }
-    },
-    componentDidMount() {
+class EditUser extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: "",
+      lastName: ""
+    }
+  }
+  componentDidMount() {
         $.ajax({
             url: '/api/users/' + this.props.params.id,
             type: 'GET'
@@ -18,7 +19,7 @@ const EditUser = React.createClass({
         }).catch((error) => {
             console.log(error)
         })
-    },
+    }
     handleChange(eType, event) {
       console.log(eType)
         this.setState({
@@ -26,12 +27,11 @@ const EditUser = React.createClass({
                 [eType]: event.target.value
 
         })
-    },
+    }
     handleSubmit(event) {
       console.log("first name: ", this.state.firstName)
       console.log("last name: ", this.state.lastName)
         event.preventDefault();
-        {
             $.ajax({
                 url: '/api/users/' + this.props.params.id,
                 type: 'PUT',
@@ -45,9 +45,9 @@ const EditUser = React.createClass({
             }).catch((error) => {
                 console.log(error)
             })
-        }
-    },
-    render: function() {
+
+    }
+    render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -64,6 +64,6 @@ const EditUser = React.createClass({
             </div>
         )
     }
-})
+}
 
 export default EditUser;

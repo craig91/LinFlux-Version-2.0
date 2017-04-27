@@ -3,13 +3,16 @@ import LogoutButton from './logout.jsx';
 import $ from 'jquery';
 
 
-const LoginForm = React.createClass({
-  getInitialState() {
-    return { user: null }
-  },
+class LoginForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null
+    };
+  }
   handleSubmit(event) {
     event.preventDefault();
-    {
+
       $.ajax({
         url: 'api/users/login',
         type: 'POST',
@@ -23,12 +26,12 @@ const LoginForm = React.createClass({
       }).catch((error) => {
         console.log(error)
       })
-    }
     console.log(this.userName.value)
-  },
-  render: function() {
+  }
+  render() {
     return(
-      <div>
+    <div className="form-master">
+      <div className="form-container">
         <form onSubmit={this.handleSubmit} >
 
           <span>Enter Your User Name</span>
@@ -47,9 +50,10 @@ const LoginForm = React.createClass({
         </form>
         <LogoutButton />
       </div>
+    </div>
     )
   }
-})
+}
 
 
 

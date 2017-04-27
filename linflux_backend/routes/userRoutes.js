@@ -30,7 +30,7 @@ function oneUser(req, res) {
 function editUser(req, res) {
   console.log(req.body.firstName)
   console.log(req.body.lastName)
-    User.findById(req.params.id)
+    User.findById(req.session.passport.user)
     .then(function(Userinfo) {
         Userinfo.update({
           firstName: req.body.firstName,
