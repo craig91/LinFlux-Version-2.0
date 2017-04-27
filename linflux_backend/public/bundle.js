@@ -108,6 +108,10 @@
 	
 	__webpack_require__(274);
 	
+	__webpack_require__(276);
+	
+	__webpack_require__(278);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var App = _react2.default.createClass({
@@ -38219,6 +38223,7 @@
 	        type: 'POST',
 	        data: {
 	          userName: this.userName.value,
+	          userPhoto: this.userPhoto.value,
 	          password: this.password.value,
 	          firstName: this.firstName.value,
 	          lastName: this.lastName.value,
@@ -38239,6 +38244,7 @@
 	      });
 	    }
 	    console.log(this.userName.value);
+	    console.log(this.userPhoto.value);
 	    console.log(this.password.value);
 	    console.log(this.firstName.value);
 	    console.log(this.lastName.value);
@@ -38252,59 +38258,71 @@
 	
 	    return _react2.default.createElement(
 	      'div',
-	      null,
+	      { className: 'form-master' },
 	      _react2.default.createElement(
-	        'form',
-	        { onSubmit: this.handleSubmit },
+	        'div',
+	        { className: 'form-container' },
 	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Enter Your User Name'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', placeholder: '7 to 14 characters', ref: function ref(input) {
-	            _this2.userName = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Enter Your password'
-	        ),
-	        _react2.default.createElement('input', { type: 'password', placeholder: '7 to 14 characters', ref: function ref(input) {
-	            _this2.password = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'First Name'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.firstName = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Last Name'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.lastName = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Location'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.location = input;
-	          } }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Where do you work?'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.company = input;
-	          } }),
-	        _react2.default.createElement('input', { type: 'submit' })
+	          'form',
+	          { onSubmit: this.handleSubmit },
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Enter Your User Name'
+	          ),
+	          _react2.default.createElement('input', { type: 'text', placeholder: '7 to 14 characters', ref: function ref(input) {
+	              _this2.userName = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Link your photo'
+	          ),
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'enter url here', ref: function ref(input) {
+	              _this2.userPhoto = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Enter Your password'
+	          ),
+	          _react2.default.createElement('input', { type: 'password', placeholder: '7 to 14 characters', ref: function ref(input) {
+	              _this2.password = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'First Name'
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.firstName = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Last Name'
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.lastName = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Location'
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.location = input;
+	            } }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Where do you work?'
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.company = input;
+	            } }),
+	          _react2.default.createElement('input', { type: 'submit' })
+	        )
 	      )
 	    );
 	  }
@@ -38583,6 +38601,7 @@
 	      this.state.user === null ? 'Loading...' : _react2.default.createElement(
 	        'div',
 	        null,
+	        _react2.default.createElement('img', { className: 'profile_photo', src: this.state.user.userPhoto }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
@@ -38862,35 +38881,39 @@
 	    console.log(this.state.article);
 	    return _react2.default.createElement(
 	      'div',
-	      null,
+	      { className: 'form-master' },
 	      _react2.default.createElement(
-	        'form',
-	        { onSubmit: this.handleSubmit },
+	        'div',
+	        { className: 'form-container' },
 	        _react2.default.createElement(
-	          'span',
-	          null,
-	          ' Article Image '
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.hero = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          ' Title of your article '
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.title = input;
-	          }, required: true }),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          ' A short description of your article '
-	        ),
-	        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	            _this2.sDescript = input;
-	          }, required: true }),
-	        _react2.default.createElement('input', { type: 'submit' })
+	          'form',
+	          { onSubmit: this.handleSubmit },
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            ' Article Image '
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.hero = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            ' Title of your article '
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.title = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            ' A short description of your article '
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.sDescript = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { type: 'submit' })
+	        )
 	      )
 	    );
 	  }
@@ -38986,6 +39009,10 @@
 	
 	var _logout2 = _interopRequireDefault(_logout);
 	
+	var _jquery = __webpack_require__(242);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var LoginForm = _react2.default.createClass({
@@ -38998,7 +39025,7 @@
 	
 	    event.preventDefault();
 	    {
-	      $.ajax({
+	      _jquery2.default.ajax({
 	        url: 'api/users/login',
 	        type: 'POST',
 	        data: {
@@ -40933,6 +40960,86 @@
 	
 	// module
 	exports.push([module.id, ".home-body {\n  background-color: #266e9e;\n  height: 100vh;\n  position: relative;\n  overflow: hidden;\n}\n\n\n.home_page_background {\n  position: absolute;\n  right: 0;\n  bottom: -22%;\n  width: 50%;\n  opacity: 0.7;\n}\n\n\n.home_page_slogan {\n  font-size: 4.4rem;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  font-family: 'Indie Flower', cursive;\n  color: white;\n  text-align: center;\n  position: absolute;\n  bottom: 39%;\n  left: 8%;\n}\n\n.home_page_slogan:first-child {\n  color:red;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ }),
+/* 276 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(277);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(269)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!./form_styles.css", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!./form_styles.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(268)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".form-master {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  padding: 45px 0px 10px 0px;\n}\n\n.form-container {\n  margin-top: 10%;\n  padding: 25px 19px;\n  display: flex;\n  flex-direction: column;\n  border-radius: 3px;\n  width: 500px;\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5)\n}\n\n.form-container input{\n    height: 40px;\n    width: 100%;\n    border: 1px solid #d1d2d4;\n    border-radius: 4px;\n    margin-bottom: 13px;\n    padding-left: 6px;\n    font-size: 15px;\n    box-sizing: border-box;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ }),
+/* 278 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(279);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(269)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!./profile_info.css", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!./profile_info.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(268)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".profile_photo {\n  height: 100px;\n  width: 100px;\n  border: 1px solid black;\n  border-radius: 5px;\n}\n", ""]);
 	
 	// exports
 
