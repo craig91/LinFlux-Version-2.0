@@ -53,11 +53,12 @@ function editUser(req, res) {
 function createUser(req, res) {
 User.create({
     userName: req.body.userName,
+    userPhoto: req.body.userPhoto,
     password: req.body.password,
     firstName: req.body.firstName,
-    lastName: req.body.lastName
-    // location: req.body.location,
-    // company: req.body.company
+    lastName: req.body.lastName,
+    location: req.body.location,
+    company: req.body.company
   }).then(function(newUser) {
       passport.authenticate('local', function(err, user, info) {
         if(err) { return next(err); }
