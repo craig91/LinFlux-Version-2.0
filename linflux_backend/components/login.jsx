@@ -1,5 +1,6 @@
 import React from 'react';
 import LogoutButton from './logout.jsx';
+import $ from 'jquery';
 
 
 const LoginForm = React.createClass({
