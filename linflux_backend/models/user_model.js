@@ -10,6 +10,11 @@ module.exports = function(sequelize, DataTypes) {
       isAlpha: true,
       len: [7, 14]
     },
+    userPhoto: {
+      type:DataTypes.STRING,
+      allowNull: false,
+      isAlpha: true
+    },
     password: {
       type:DataTypes.STRING,
       allowNull: false,
