@@ -19,6 +19,8 @@ import '../css/blog.css';
 import '../css/distros_page.css';
 import '../css/nav_bar.css';
 import '../css/home_page.css';
+import '../css/form_styles.css';
+import '../css/profile_info.css';
 
 
 var App = React.createClass({
