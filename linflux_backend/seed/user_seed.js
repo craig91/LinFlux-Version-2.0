@@ -5,6 +5,7 @@ User.sync({force: true})
 .then(()=> User.bulkCreate([
 {
   userName: 'XxBkLyN sHoTsxX',
+  userPhoto: 'https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAbDAAAAJDhkZWM5MTA2LWNjZTMtNDNmMy04OWM0LTU2MzEyMDY1NTg4Yw.jpg',
   password:'123',
   firstName: 'Craig',
   lastName: 'Dejean',
@@ -14,6 +15,7 @@ User.sync({force: true})
 
 {
   userName: 'foxyKyot0',
+  userPhoto: '',
   password:'456',
   firstName: 'Ayuka',
   lastName: 'Niga',
@@ -23,6 +25,7 @@ User.sync({force: true})
 
 {
   userName: 'NeuroManc3er',
+  userPhoto: '',
   password:'789',
   firstName: 'Kamil',
   lastName: 'Skorupa',
@@ -32,6 +35,7 @@ User.sync({force: true})
 
 {
   userName: 'Kayod3',
+  userPhoto: '',
   password:'1011',
   firstName: 'Chris',
   lastName: 'Samuel',
@@ -41,6 +45,7 @@ User.sync({force: true})
 
 {
   userName: 'BigNat',
+  userPhoto: '',
   password:'1122',
   firstName: 'Nathaniel',
   lastName: 'Brown',
@@ -50,6 +55,7 @@ User.sync({force: true})
 
 {
   userName: 'SirLancelot',
+  userPhoto: '',
   password:'1234',
   firstName: 'Lance',
   lastName: 'Jones',
