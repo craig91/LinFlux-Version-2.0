@@ -26,6 +26,7 @@ const ProfileInfo = React.createClass({
       <div>
         {this.state.user === null ? 'Loading...' :
           <div>
+            <img className="profile_photo" src={this.state.user.userPhoto}/>
             <p>{this.state.user.userName}</p>
             <p>{this.state.user.firstName}</p>
             <p>{this.state.user.lastName}</p>
