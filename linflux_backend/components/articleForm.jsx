@@ -15,7 +15,7 @@ const ArticleForm = React.createClass({
           hero: this.hero.value,
           title: this.title.value,
           sDescript: this.sDescript.value,
-          
+
         }
       }).done((data) => {
         console.log(data)
@@ -31,7 +31,8 @@ const ArticleForm = React.createClass({
   render: function() {
     console.log(this.state.article)
     return (
-      <div>
+    <div className="form-master">
+      <div className="form-container">
         <form onSubmit={this.handleSubmit}>
           <span> Article Image </span>
           <input type="text" ref={ (input) => {
@@ -53,6 +54,7 @@ const ArticleForm = React.createClass({
           <input type="submit" />
         </form>
       </div>
+    </div>
     )
   }
 })
