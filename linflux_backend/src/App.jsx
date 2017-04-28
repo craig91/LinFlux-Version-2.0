@@ -14,13 +14,16 @@ import ArticleForm from '../components/articleForm.jsx';
 import ProfileInfo from '../components/profile_info.jsx';
 import NavBar from '../components/nav_bar.jsx';
 import LoginForm from '../components/login.jsx';
+import ProfilePage from '../components/profile_page.jsx';
 
 import '../css/blog.css';
 import '../css/distros_page.css';
 import '../css/nav_bar.css';
 import '../css/home_page.css';
 import '../css/form_styles.css';
-import '../css/profile_info.css';
+import '../css/card.css';
+import '../css/profile_page.css';
+import '../css/reset.css';
 
 
 var App = React.createClass({
@@ -45,6 +48,7 @@ ReactDOM.render (
       <Route path='/editUser/:id' component={EditUser} />
       <Route path='/articles/:id' component={Article} />
       <Route path='/profile/' component={OneUser} />
+      <Route path='/profile_page/' component={ProfilePage} />
       <Route path='/profile-info/:id' component={ProfileInfo} />
     </Route>
   </Router>,
