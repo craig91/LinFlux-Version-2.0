@@ -1,7 +1,7 @@
-nav {
+.navi {
   list-style-type: none;
   background-color: transparent;
-  margin-top: 3%;
+  margin-top: 5%;
   position: absolute;
   right: 0;
 }
