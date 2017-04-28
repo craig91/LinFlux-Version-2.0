@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router';
 import ProfileInfo from './profile_info.jsx';
+import NavBar from './nav_bar.jsx';
 
 
 
@@ -71,6 +72,8 @@ class OneUser extends React.Component {
           console.log('users', this.state.user)
           return (
             <div>
+              {/* <NavBar /> */}
+                <div>
                  {this.state.user === null ? 'Loading......' : this.state.user.Articles.map(function(val, idx) {
 
                     return (
@@ -83,7 +86,7 @@ class OneUser extends React.Component {
                         <div className="white descript-container">
                           <h1>{val.title}</h1>
                           <h2> Date Posted </h2>
-                          <p>{val.sDescript}</p>
+                          <p>{val.sDescript}Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus.</p>
                           <div className="read_more">
                             <Link to={"/articles/" + val.id} key={idx}>Read More</Link>
                           </div>
@@ -95,7 +98,8 @@ class OneUser extends React.Component {
                     )
                   })
                 }
-                </div>
+              </div>
+           </div>
         )
     }
   }
