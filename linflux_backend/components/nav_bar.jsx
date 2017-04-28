@@ -5,6 +5,7 @@ import Distros from './distros.jsx';
 import CreateUser from './userForm.jsx';
 import LoginForm from './login.jsx';
 import OneUser from './profile.jsx';
+import ProfilePage from './profile_page.jsx';
 import Modal from 'react-modal';
 import {Link} from 'react-router';
 
@@ -41,13 +42,12 @@ const NavBar = React.createClass({
     render: function() {
         return (
             <div>
-                <nav>
-                    <Link to="/profile/">My Profile</Link>
+                <nav className="navi">
+                    <Link to="/profile_page/">My Profile</Link>
                     <Link to="/login">Login/Logout</Link>
                     <Link to="/hello" className="active">Hello</Link>
                     <Link to="/articleForm">Article Form</Link>
                     <Link to="/distros">Distros</Link>
-                    <Link to="/userForm">Sign in/Sign up</Link>
                 </nav>
             </div>
         )
