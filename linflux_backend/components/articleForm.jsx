@@ -2,13 +2,12 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
 
-class ArticleForm extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
+const ArticleForm = React.createClass ({
+  getInitialState() {
+    return {
       article: null
     }
-  }
+  },
   handleSubmit(event) {
     {
       $.ajax({
@@ -30,8 +29,8 @@ class ArticleForm extends React.Component {
     console.log(this.hero.value)
     console.log(this.title.value)
     console.log(this.sDescript.value)
-  }
-  render() {
+  },
+  render: function() {
     console.log(this.state.article)
     return (
     <div className="form-master">
@@ -60,6 +59,6 @@ class ArticleForm extends React.Component {
     </div>
     )
   }
-}
+})
 
 export default ArticleForm;
