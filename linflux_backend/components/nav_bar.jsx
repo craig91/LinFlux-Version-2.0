@@ -30,15 +30,14 @@ const NavBar = React.createClass({
       showModal: false
     }
   },
-  componentWillUpdate(nextProps) {
-    console.log(nextProps.location.query)
-    if(nextProps.location.query['login']) {
-      this.props.router.replace('./profile/' + nextProps.location.query['login'])
-      this.setState({
-        user: {id: nextProps.location.query['login']}
-      })
-    }
-  },
+  // componentWillUpdate(nextProps) {
+  //   if(nextProps.location.query['login']) {
+  //     this.props.router.replace('./profile/' + nextProps.location.query['login'])
+  //     this.setState({
+  //       user: {id: nextProps.location.query['login']}
+  //     })
+  //   }
+  // },
     render: function() {
         return (
             <div>
