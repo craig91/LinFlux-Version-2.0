@@ -56,7 +56,6 @@ class OneUser extends React.Component {
   }
   componentDidMount() {
     var apiCall = '/api/users/private'
-       // console.log(apiCall)
       {
        $.ajax({
          url: apiCall,
@@ -72,20 +71,31 @@ class OneUser extends React.Component {
           console.log('users', this.state.user)
           return (
             <div>
-                <div>{this.state.user === null ? 'Loading......' : this.state.user.Articles.map(function(val, idx) {
+                 {this.state.user === null ? 'Loading......' : this.state.user.Articles.map(function(val, idx) {
+
                     return (
-                      <div key={idx}>
-                         <Link to={"/articles/" + val.id} key={idx}>{val.title}</Link>
-                     </div>
+                      <div key={idx} className="card-2 card-margin top-margin ">
+
+
+                        <div className="profile_photo" style={{backgroundImage: `url(${val.hero})` }}></div>
+
+
+                        <div className="white descript-container">
+                          <h1>{val.title}</h1>
+                          <h2> Date Posted </h2>
+                          <p>{val.sDescript}</p>
+                          <div className="read_more">
+                            <Link to={"/articles/" + val.id} key={idx}>Read More</Link>
+                          </div>
+                        </div>
+
+
+
+                      </div>
                     )
                   })
                 }
                 </div>
-              <div>
-                  <ProfileInfo />
-
-              </div>
-          </div>
         )
     }
   }
