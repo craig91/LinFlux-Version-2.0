@@ -1,11 +1,17 @@
 .profile_body{
-  background-color: #fdfcfc;
   display: flex;
   justify-content: center;
   margin: 0% 1% 0% 1%;
   overflow: none;
   max-width: 90%;
   margin: auto;
+  margin-top: 5%;
+}
+
+@media screen and (min-width: 500px) {
+  .profile_body {
+    max-width: 60%;
+  }
 }
 
 .left-column {
