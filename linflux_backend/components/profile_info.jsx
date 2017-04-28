@@ -27,11 +27,12 @@ const ProfileInfo = React.createClass({
         {this.state.user === null ? 'Loading...' :
           <div className=" card-2 card-margin top-margin ">
 
+          <div className="profile_photo_container">
+            <div className="profile_photo_2" style={{backgroundImage: `url(${this.state.user.userPhoto})` }}></div>
+          </div>
 
-            <div className="profile_photo" style={{backgroundImage: `url(${this.state.user.userPhoto})` }}></div>
 
-
-            <div className="white descript-container">
+            <div className="white descript-container2">
               <h1>{this.state.user.userName}</h1>
               <p>{this.state.user.firstName}</p>
               <p>{this.state.user.lastName}</p>
