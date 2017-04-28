@@ -38630,6 +38630,10 @@
 	
 	var _profile_info2 = _interopRequireDefault(_profile_info);
 	
+	var _nav_bar = __webpack_require__(249);
+	
+	var _nav_bar2 = _interopRequireDefault(_nav_bar);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38717,42 +38721,47 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        this.state.user === null ? 'Loading......' : this.state.user.Articles.map(function (val, idx) {
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          this.state.user === null ? 'Loading......' : this.state.user.Articles.map(function (val, idx) {
 	
-	          return _react2.default.createElement(
-	            'div',
-	            { key: idx, className: 'card-2 card-margin top-margin ' },
-	            _react2.default.createElement('div', { className: 'profile_photo', style: { backgroundImage: 'url(' + val.hero + ')' } }),
-	            _react2.default.createElement(
+	            return _react2.default.createElement(
 	              'div',
-	              { className: 'white descript-container' },
-	              _react2.default.createElement(
-	                'h1',
-	                null,
-	                val.title
-	              ),
-	              _react2.default.createElement(
-	                'h2',
-	                null,
-	                ' Date Posted '
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                val.sDescript
-	              ),
+	              { key: idx, className: 'card-2 card-margin top-margin ' },
+	              _react2.default.createElement('div', { className: 'profile_photo', style: { backgroundImage: 'url(' + val.hero + ')' } }),
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'read_more' },
+	                { className: 'white descript-container' },
 	                _react2.default.createElement(
-	                  _reactRouter.Link,
-	                  { to: "/articles/" + val.id, key: idx },
-	                  'Read More'
+	                  'h1',
+	                  null,
+	                  val.title
+	                ),
+	                _react2.default.createElement(
+	                  'h2',
+	                  null,
+	                  ' Date Posted '
+	                ),
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  val.sDescript,
+	                  'Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus.'
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'read_more' },
+	                  _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: "/articles/" + val.id, key: idx },
+	                    'Read More'
+	                  )
 	                )
 	              )
-	            )
-	          );
-	        })
+	            );
+	          })
+	        )
 	      );
 	    }
 	  }]);
@@ -38811,10 +38820,14 @@
 	      this.state.user === null ? 'Loading...' : _react2.default.createElement(
 	        'div',
 	        { className: ' card-2 card-margin top-margin ' },
-	        _react2.default.createElement('div', { className: 'profile_photo', style: { backgroundImage: 'url(' + this.state.user.userPhoto + ')' } }),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'white descript-container' },
+	          { className: 'profile_photo_container' },
+	          _react2.default.createElement('div', { className: 'profile_photo_2', style: { backgroundImage: 'url(' + this.state.user.userPhoto + ')' } })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'white descript-container2' },
 	          _react2.default.createElement(
 	            'h1',
 	            null,
@@ -39050,16 +39063,15 @@
 	      showModal: false
 	    };
 	  },
-	  componentWillUpdate: function componentWillUpdate(nextProps) {
-	    console.log(nextProps.location.query);
-	    if (nextProps.location.query['login']) {
-	      this.props.router.replace('./profile/' + nextProps.location.query['login']);
-	      this.setState({
-	        user: { id: nextProps.location.query['login'] }
-	      });
-	    }
-	  },
 	
+	  // componentWillUpdate(nextProps) {
+	  //   if(nextProps.location.query['login']) {
+	  //     this.props.router.replace('./profile/' + nextProps.location.query['login'])
+	  //     this.setState({
+	  //       user: {id: nextProps.location.query['login']}
+	  //     })
+	  //   }
+	  // },
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
@@ -41435,7 +41447,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".card_wrapper {\n  width: 100%;\n}\n\n.card-2 {\n  box-shadow:0 2px 5px 0 rgba(0,0,0,0.4),0 2px 10px 0 rgba(0,0,0,0.4);\n}\n\n.profile_photo {\n  height: 50vh;\n  width: 100%;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center center;\n}\n\n.descript-container::before {\n  padding: 0.01em 16px;\n}\n\n.descript-container {\n  padding: 5px;\n}\n\nh1 {\n  font-size: 30px;\n  font-weight: 400;\n  margin: 2px 0;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.read_more {\n  display: inline-block;\n  vertical-align: middle;\n  overflow: hidden;\n  text-decoration: none;\n  text-align: center;\n  white-space: nowrap;\n  outline: 0;\n  border: 1px solid black;\n  height: 25px;\n  width: 150px;\n  padding: 12px 24px 12px 24px;\n}\n\n.read_more a {\n  text-decoration: none;\n  font-family: 'Source Sans Pro', sans-serif;\n  font-weight: 500;\n  color: black;\n  letter-spacing: 0.5px;\n}\n", ""]);
+	exports.push([module.id, ".card_wrapper {\n  width: 100%;\n}\n\n.card-2 {\n  box-shadow:0 2px 5px 0 rgba(0,0,0,0.4),0 2px 10px 0 rgba(0,0,0,0.4);\n}\n\n.profile_photo {\n  height: 50vh;\n  width: 100%;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center center;\n}\n\n.profile_photo_container {\n   display: flex;\n   justify-content: center;\n}\n\n\n\n.profile_photo_2 {\n  height: 50vh;\n  width: 89%;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center center;\n  border-radius: 50%;\n}\n\n\n\n.descript-container::before {\n  padding: 0.01em 16px;\n}\n\n.descript-container {\n  padding: 10px;\n}\n\n.descript-container2 {\n  padding: 5px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n}\n\nh1 {\n  font-size: 30px;\n  font-weight: 400;\n  margin: 2px 0;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.read_more {\n  display: inline-block;\n  vertical-align: middle;\n  overflow: hidden;\n  text-decoration: none;\n  text-align: center;\n  white-space: nowrap;\n  outline: 0;\n  border: 1px solid black;\n  height: 25px;\n  width: 150px;\n  padding: 12px 24px 12px 24px;\n}\n\n.read_more a {\n  text-decoration: none;\n  font-family: 'Source Sans Pro', sans-serif;\n  font-weight: 500;\n  color: black;\n  letter-spacing: 0.5px;\n}\n", ""]);
 	
 	// exports
 
@@ -41475,7 +41487,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".profile_body{\n  background-color: #fdfcfc;\n  display: flex;\n  justify-content: center;\n  margin: 0% 1% 0% 1%;\n  overflow: none;\n  max-width: 90%;\n  margin: auto;\n}\n\n.left-column {\n  width: 66.66666%;\n}\n\n.right-column {\n  width: 33.33333%;\n}\n\n.column {\n  display: flex;\n  flex-direction: column;\n  padding: 17px;\n}\n\n.column h1 {\n  font-size: 30px;\n  margin-bottom: 15px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.column p {\n  font-size: 20px;\n  margin-bottom: 15px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.column h2 {\n  margin-bottom: 15px;\n  font-size: 20px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n", ""]);
+	exports.push([module.id, ".profile_body{\n  display: flex;\n  justify-content: center;\n  margin: 0% 1% 0% 1%;\n  overflow: none;\n  max-width: 90%;\n  margin: auto;\n  margin-top: 5%;\n}\n\n@media screen and (min-width: 500px) {\n  .profile_body {\n    max-width: 60%;\n  }\n}\n\n.left-column {\n  width: 66.66666%;\n}\n\n.right-column {\n  width: 33.33333%;\n}\n\n.column {\n  display: flex;\n  flex-direction: column;\n  padding: 17px;\n}\n\n.column h1 {\n  font-size: 30px;\n  margin-bottom: 15px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.column p {\n  font-size: 20px;\n  margin-bottom: 15px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.column h2 {\n  margin-bottom: 15px;\n  font-size: 20px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n", ""]);
 	
 	// exports
 
