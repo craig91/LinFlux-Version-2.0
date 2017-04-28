@@ -14,12 +14,38 @@
   background-position: center center;
 }
 
+.profile_photo_container {
+   display: flex;
+   justify-content: center;
+}
+
+
+
+.profile_photo_2 {
+  height: 50vh;
+  width: 89%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+}
+
+
+
 .descript-container::before {
   padding: 0.01em 16px;
 }
 
 .descript-container {
+  padding: 10px;
+}
+
+.descript-container2 {
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 h1 {
