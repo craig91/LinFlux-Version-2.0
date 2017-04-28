@@ -1,0 +1,52 @@
+.card_wrapper {
+  width: 100%;
+}
+
+.card-2 {
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.4),0 2px 10px 0 rgba(0,0,0,0.4);
+}
+
+.profile_photo {
+  height: 50vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.descript-container::before {
+  padding: 0.01em 16px;
+}
+
+.descript-container {
+  padding: 5px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 2px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.read_more {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  outline: 0;
+  border: 1px solid black;
+  height: 25px;
+  width: 150px;
+  padding: 12px 24px 12px 24px;
+}
+
+.read_more a {
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  color: black;
+  letter-spacing: 0.5px;
+}
