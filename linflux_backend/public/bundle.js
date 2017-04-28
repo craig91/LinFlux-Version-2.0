@@ -80,11 +80,11 @@
 	
 	var _homepage2 = _interopRequireDefault(_homepage);
 	
-	var _distros = __webpack_require__(252);
+	var _distros = __webpack_require__(251);
 	
 	var _distros2 = _interopRequireDefault(_distros);
 	
-	var _articleForm = __webpack_require__(251);
+	var _articleForm = __webpack_require__(250);
 	
 	var _articleForm2 = _interopRequireDefault(_articleForm);
 	
@@ -92,13 +92,17 @@
 	
 	var _profile_info2 = _interopRequireDefault(_profile_info);
 	
-	var _nav_bar = __webpack_require__(250);
+	var _nav_bar = __webpack_require__(249);
 	
 	var _nav_bar2 = _interopRequireDefault(_nav_bar);
 	
-	var _login = __webpack_require__(253);
+	var _login = __webpack_require__(252);
 	
 	var _login2 = _interopRequireDefault(_login);
+	
+	var _profile_page = __webpack_require__(254);
+	
+	var _profile_page2 = _interopRequireDefault(_profile_page);
 	
 	__webpack_require__(266);
 	
@@ -108,9 +112,13 @@
 	
 	__webpack_require__(274);
 	
-	__webpack_require__(276);
+	__webpack_require__(277);
 	
-	__webpack_require__(278);
+	__webpack_require__(279);
+	
+	__webpack_require__(281);
+	
+	__webpack_require__(283);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -141,6 +149,7 @@
 	    _react2.default.createElement(_reactRouter.Route, { path: '/editUser/:id', component: _editUser2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/articles/:id', component: _articles2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/profile/', component: _profile2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/profile_page/', component: _profile_page2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/profile-info/:id', component: _profile_info2.default })
 	  )
 	), document.getElementById('root'));
@@ -38136,6 +38145,42 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	// const Article = React.createClass({
+	//   getInitialState() {
+	//     return {articles: null}
+	//   },
+	//   componentDidMount() {
+	//     $.ajax({
+	//       url: 'api/articles' + this.props.params.id,
+	//       type: 'GET'
+	//     })
+	//   },
+	//   render: function() {
+	//     if(this.state.articles) {
+	//       let article = this.state.articles;
+	//       console.log(article)
+	//       return (
+	//         <div>
+	//                <div className="hero-container" style={{backgroundImage: `url(${article.hero})` }}> </div>
+	//                <div className="blog-text">
+	//                   Nulla porttitor accumsan tincidunt. Praesent sapien massa, convallis a pellentesque nec,
+	//                   egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+	//                   Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam
+	//                   id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+	//                   Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum
+	//                   sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.
+	//                 </div>
+	//             </div>
+	//       )
+	//     } else {
+	//       return (
+	//         <div>Loading....</div>
+	//       )
+	//     }
+	//   }
+	// })
+	
+	
 	var Article = function (_React$Component) {
 	  _inherits(Article, _React$Component);
 	
@@ -38655,7 +38700,6 @@
 	      var _this2 = this;
 	
 	      var apiCall = '/api/users/private';
-	      // console.log(apiCall)
 	      {
 	        _jquery2.default.ajax({
 	          url: apiCall,
@@ -38673,26 +38717,42 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          this.state.user === null ? 'Loading......' : this.state.user.Articles.map(function (val, idx) {
-	            return _react2.default.createElement(
+	        this.state.user === null ? 'Loading......' : this.state.user.Articles.map(function (val, idx) {
+	
+	          return _react2.default.createElement(
+	            'div',
+	            { key: idx, className: 'card-2 card-margin top-margin ' },
+	            _react2.default.createElement('div', { className: 'profile_photo', style: { backgroundImage: 'url(' + val.hero + ')' } }),
+	            _react2.default.createElement(
 	              'div',
-	              { key: idx },
+	              { className: 'white descript-container' },
 	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: "/articles/" + val.id, key: idx },
+	                'h1',
+	                null,
 	                val.title
+	              ),
+	              _react2.default.createElement(
+	                'h2',
+	                null,
+	                ' Date Posted '
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                val.sDescript
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'read_more' },
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: "/articles/" + val.id, key: idx },
+	                  'Read More'
+	                )
 	              )
-	            );
-	          })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(_profile_info2.default, null)
-	        )
+	            )
+	          );
+	        })
 	      );
 	    }
 	  }]);
@@ -38712,8 +38772,6 @@
 	  value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -38724,91 +38782,41 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	// const ProfileInfo = React.createClass({
-	//   getInitialState() {
-	//     return {
-	//       user: null
-	//     }
-	//   },
-	//   componentDidMount() {
-	//     const apiCall = '/api/users/private'
-	//     {
-	//       $.ajax({
-	//         url: apiCall,
-	//         type: 'GET'
-	//       })
-	//       .done((data) => {
-	//         this.setState({ user: data})
-	//       })
-	//     }
-	//   },
-	//   render: function() {
-	//     console.log('users', this.state.user)
-	//     return(
-	//       <div>
-	//         {this.state.user === null ? 'Loading...' :
-	//           <div>
-	//             <img className="profile_photo" src={this.state.user.userPhoto}/>
-	//             <p>{this.state.user.userName}</p>
-	//             <p>{this.state.user.firstName}</p>
-	//             <p>{this.state.user.lastName}</p>
-	//             <p>{this.state.user.company}</p>
-	//             <p>{this.state.user.location}</p>
-	//
-	//           </div>
-	//
-	//       }
-	//       </div>3
-	//     )
-	//   }
-	// })
-	
-	var ProfileInfo = function (_React$Component) {
-	  _inherits(ProfileInfo, _React$Component);
-	
-	  function ProfileInfo(props) {
-	    _classCallCheck(this, ProfileInfo);
-	
-	    var _this = _possibleConstructorReturn(this, (ProfileInfo.__proto__ || Object.getPrototypeOf(ProfileInfo)).call(this, props));
-	
-	    _this.state = {
+	var ProfileInfo = _react2.default.createClass({
+	  displayName: 'ProfileInfo',
+	  getInitialState: function getInitialState() {
+	    return {
 	      user: null
 	    };
-	    return _this;
-	  }
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
 	
-	  _createClass(ProfileInfo, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var _this2 = this;
-	
-	      var apiCall = '/api/users/private';
-	
+	    var apiCall = '/api/users/private';
+	    {
 	      _jquery2.default.ajax({
 	        url: apiCall,
 	        type: 'GET'
 	      }).done(function (data) {
-	        _this2.setState({ user: data });
+	        _this.setState({ user: data });
 	      });
 	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
+	  },
+	
+	  render: function render() {
+	    console.log('users', this.state.user);
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'card_wrapper' },
+	      this.state.user === null ? 'Loading...' : _react2.default.createElement(
 	        'div',
-	        null,
-	        this.state.user === null ? 'Loading...' : _react2.default.createElement(
+	        { className: ' card-2 card-margin top-margin ' },
+	        _react2.default.createElement('div', { className: 'profile_photo', style: { backgroundImage: 'url(' + this.state.user.userPhoto + ')' } }),
+	        _react2.default.createElement(
 	          'div',
-	          null,
-	          _react2.default.createElement('img', { className: 'profile_photo', src: this.state.user.userPhoto }),
+	          { className: 'white descript-container' },
 	          _react2.default.createElement(
-	            'p',
+	            'h1',
 	            null,
 	            this.state.user.userName
 	          ),
@@ -38833,12 +38841,48 @@
 	            this.state.user.location
 	          )
 	        )
-	      );
-	    }
-	  }]);
-	
-	  return ProfileInfo;
-	}(_react2.default.Component);
+	      )
+	    );
+	  }
+	});
+	// class ProfileInfo extends React.Component {
+	//   constructor(props) {
+	//     super(props);
+	//     this.state = {
+	//       user: null
+	//     };
+	//   }
+	//   componentDidMount() {
+	//       const apiCall = '/api/users/private'
+	//
+	//         $.ajax({
+	//           url: apiCall,
+	//           type: 'GET'
+	//         })
+	//         .done((data) => {
+	//           this.setState({ user: data})
+	//         })
+	//
+	//     }
+	//     render() {
+	//       return(
+	//         <div>
+	//           {this.state.user === null ? 'Loading...' :
+	//             <div>
+	//               <img className="profile_photo" src={this.state.user.userPhoto}/>
+	//               <p>{this.state.user.userName}</p>
+	//               <p>{this.state.user.firstName}</p>
+	//               <p>{this.state.user.lastName}</p>
+	//               <p>{this.state.user.company}</p>
+	//               <p>{this.state.user.location}</p>
+	//
+	//             </div>
+	//
+	//         }
+	//         </div>
+	//       )
+	//     }
+	// }
 	
 	exports.default = ProfileInfo;
 
@@ -38860,7 +38904,7 @@
 	
 	var _reactRouter = __webpack_require__(182);
 	
-	var _nav_bar = __webpack_require__(250);
+	var _nav_bar = __webpack_require__(249);
 	
 	var _nav_bar2 = _interopRequireDefault(_nav_bar);
 	
@@ -38935,8 +38979,7 @@
 	    </div> */}
 
 /***/ }),
-/* 249 */,
-/* 250 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38953,11 +38996,11 @@
 	
 	var _hello2 = _interopRequireDefault(_hello);
 	
-	var _articleForm = __webpack_require__(251);
+	var _articleForm = __webpack_require__(250);
 	
 	var _articleForm2 = _interopRequireDefault(_articleForm);
 	
-	var _distros = __webpack_require__(252);
+	var _distros = __webpack_require__(251);
 	
 	var _distros2 = _interopRequireDefault(_distros);
 	
@@ -38965,13 +39008,17 @@
 	
 	var _userForm2 = _interopRequireDefault(_userForm);
 	
-	var _login = __webpack_require__(253);
+	var _login = __webpack_require__(252);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
 	var _profile = __webpack_require__(246);
 	
 	var _profile2 = _interopRequireDefault(_profile);
+	
+	var _profile_page = __webpack_require__(254);
+	
+	var _profile_page2 = _interopRequireDefault(_profile_page);
 	
 	var _reactModal = __webpack_require__(255);
 	
@@ -39019,10 +39066,10 @@
 	      null,
 	      _react2.default.createElement(
 	        'nav',
-	        null,
+	        { className: 'navi' },
 	        _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: '/profile/' },
+	          { to: '/profile_page/' },
 	          'My Profile'
 	        ),
 	        _react2.default.createElement(
@@ -39044,11 +39091,6 @@
 	          _reactRouter.Link,
 	          { to: '/distros' },
 	          'Distros'
-	        ),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/userForm' },
-	          'Sign in/Sign up'
 	        )
 	      )
 	    );
@@ -39058,7 +39100,7 @@
 	exports.default = NavBar;
 
 /***/ }),
-/* 251 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39066,8 +39108,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(1);
 	
@@ -39081,105 +39121,86 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var ArticleForm = function (_React$Component) {
-	  _inherits(ArticleForm, _React$Component);
-	
-	  function ArticleForm(props) {
-	    _classCallCheck(this, ArticleForm);
-	
-	    var _this = _possibleConstructorReturn(this, (ArticleForm.__proto__ || Object.getPrototypeOf(ArticleForm)).call(this, props));
-	
-	    _this.state = {
+	var ArticleForm = _react2.default.createClass({
+	  displayName: 'ArticleForm',
+	  getInitialState: function getInitialState() {
+	    return {
 	      article: null
 	    };
-	    return _this;
-	  }
+	  },
+	  handleSubmit: function handleSubmit(event) {
+	    var _this = this;
 	
-	  _createClass(ArticleForm, [{
-	    key: 'handleSubmit',
-	    value: function handleSubmit(event) {
-	      var _this2 = this;
+	    {
+	      _jquery2.default.ajax({
+	        url: 'api/articles',
+	        type: 'POST',
+	        data: {
+	          hero: this.hero.value,
+	          title: this.title.value,
+	          sDescript: this.sDescript.value
 	
-	      {
-	        _jquery2.default.ajax({
-	          url: 'api/articles',
-	          type: 'POST',
-	          data: {
-	            hero: this.hero.value,
-	            title: this.title.value,
-	            sDescript: this.sDescript.value
-	
-	          }
-	        }).done(function (data) {
-	          console.log(data);
-	          _this2.setState({ article: data });
-	        }).catch(function (error) {
-	          console.log(error);
-	        });
-	      }
-	      console.log(this.hero.value);
-	      console.log(this.title.value);
-	      console.log(this.sDescript.value);
+	        }
+	      }).done(function (data) {
+	        console.log(data);
+	        _this.setState({ article: data });
+	      }).catch(function (error) {
+	        console.log(error);
+	      });
 	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this3 = this;
+	    console.log(this.hero.value);
+	    console.log(this.title.value);
+	    console.log(this.sDescript.value);
+	  },
 	
-	      console.log(this.state.article);
-	      return _react2.default.createElement(
+	  render: function render() {
+	    var _this2 = this;
+	
+	    console.log(this.state.article);
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'form-master' },
+	      _react2.default.createElement(
 	        'div',
-	        { className: 'form-master' },
+	        { className: 'form-container' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'form-container' },
+	          'form',
+	          { onSubmit: this.handleSubmit },
 	          _react2.default.createElement(
-	            'form',
-	            { onSubmit: this.handleSubmit },
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              ' Article Image '
-	            ),
-	            _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                _this3.hero = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              ' Title of your article '
-	            ),
-	            _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                _this3.title = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              ' A short description of your article '
-	            ),
-	            _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                _this3.sDescript = input;
-	              }, required: true }),
-	            _react2.default.createElement('input', { type: 'submit' })
-	          )
+	            'span',
+	            null,
+	            ' Article Image '
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.hero = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            ' Title of your article '
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.title = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            ' A short description of your article '
+	          ),
+	          _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
+	              _this2.sDescript = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { type: 'submit' })
 	        )
-	      );
-	    }
-	  }]);
-	
-	  return ArticleForm;
-	}(_react2.default.Component);
+	      )
+	    );
+	  }
+	});
 	
 	exports.default = ArticleForm;
 
 /***/ }),
-/* 252 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39268,7 +39289,7 @@
 	exports.default = Distros;
 
 /***/ }),
-/* 253 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39277,13 +39298,11 @@
 	  value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _logout = __webpack_require__(254);
+	var _logout = __webpack_require__(253);
 	
 	var _logout2 = _interopRequireDefault(_logout);
 	
@@ -39293,33 +39312,16 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var LoginForm = _react2.default.createClass({
+	  displayName: 'LoginForm',
+	  getInitialState: function getInitialState() {
+	    return { user: null };
+	  },
+	  handleSubmit: function handleSubmit(event) {
+	    var _this = this;
 	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var LoginForm = function (_React$Component) {
-	  _inherits(LoginForm, _React$Component);
-	
-	  function LoginForm(props) {
-	    _classCallCheck(this, LoginForm);
-	
-	    var _this = _possibleConstructorReturn(this, (LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).call(this, props));
-	
-	    _this.state = {
-	      user: null
-	    };
-	    return _this;
-	  }
-	
-	  _createClass(LoginForm, [{
-	    key: 'handleSubmit',
-	    value: function handleSubmit(event) {
-	      var _this2 = this;
-	
-	      event.preventDefault();
-	
+	    event.preventDefault();
+	    {
 	      _jquery2.default.ajax({
 	        url: 'api/users/login',
 	        type: 'POST',
@@ -39328,58 +39330,55 @@
 	          password: this.password.value
 	        }
 	      }).done(function (data) {
-	        _this2.setState({ user: data });
+	        _this.setState({ user: data });
 	        console.log(data);
 	      }).catch(function (error) {
 	        console.log(error);
 	      });
-	      console.log(this.userName.value);
 	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this3 = this;
+	    console.log(this.userName.value);
+	  },
 	
-	      return _react2.default.createElement(
+	  render: function render() {
+	    var _this2 = this;
+	
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'form-master' },
+	      _react2.default.createElement(
 	        'div',
-	        { className: 'form-master' },
+	        { className: 'form-container' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'form-container' },
+	          'form',
+	          { onSubmit: this.handleSubmit },
 	          _react2.default.createElement(
-	            'form',
-	            { onSubmit: this.handleSubmit },
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              'Enter Your User Name'
-	            ),
-	            _react2.default.createElement('input', { type: 'text', placeholder: '7 to 14 characters', ref: function ref(input) {
-	                _this3.userName = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              'Password'
-	            ),
-	            _react2.default.createElement('input', { type: 'password', ref: function ref(input) {
-	                _this3.password = input;
-	              }, required: true }),
-	            _react2.default.createElement('input', { type: 'submit' })
+	            'span',
+	            null,
+	            'Enter Your User Name'
 	          ),
-	          _react2.default.createElement(_logout2.default, null)
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return LoginForm;
-	}(_react2.default.Component);
+	          _react2.default.createElement('input', { type: 'text', placeholder: '7 to 14 characters', ref: function ref(input) {
+	              _this2.userName = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Password'
+	          ),
+	          _react2.default.createElement('input', { type: 'password', ref: function ref(input) {
+	              _this2.password = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { type: 'submit' })
+	        ),
+	        _react2.default.createElement(_logout2.default, null)
+	      )
+	    );
+	  }
+	});
 	
 	exports.default = LoginForm;
 
 /***/ }),
-/* 254 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39444,6 +39443,74 @@
 	}(_react2.default.Component);
 	
 	exports.default = LogoutButton;
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(182);
+	
+	var _profile_info = __webpack_require__(247);
+	
+	var _profile_info2 = _interopRequireDefault(_profile_info);
+	
+	var _profile = __webpack_require__(246);
+	
+	var _profile2 = _interopRequireDefault(_profile);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var ProfilePage = function (_React$Component) {
+	  _inherits(ProfilePage, _React$Component);
+	
+	  function ProfilePage() {
+	    _classCallCheck(this, ProfilePage);
+	
+	    return _possibleConstructorReturn(this, (ProfilePage.__proto__ || Object.getPrototypeOf(ProfilePage)).apply(this, arguments));
+	  }
+	
+	  _createClass(ProfilePage, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'profile_body' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'left-column column' },
+	          _react2.default.createElement(_profile2.default, null)
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'right-column column' },
+	          _react2.default.createElement(_profile_info2.default, null)
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return ProfilePage;
+	}(_react2.default.Component);
+	
+	exports.default = ProfilePage;
 
 /***/ }),
 /* 255 */
@@ -41242,7 +41309,7 @@
 	
 	
 	// module
-	exports.push([module.id, "nav {\n  list-style-type: none;\n  background-color: transparent;\n  margin-top: 3%;\n  position: absolute;\n  right: 0;\n}\n\nnav a{\n  font-size: 1.4rem;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  font-family: 'Source Sans Pro', sans-serif;\n  color: white;\n  text-align: center;\n  text-decoration: none;\n  padding: 14px 16px;\n}\n\nnav a:hover{\n  background-color: #199DF8;\n}\n\nnav a:hover:not(.active) {\n  background-color: #199DF8;\n}\n\n/*.active {\n  background-color: #199DF8;\n}*/\n", ""]);
+	exports.push([module.id, ".navi {\n  list-style-type: none;\n  background-color: transparent;\n  margin-top: 5%;\n  position: absolute;\n  right: 0;\n}\n\nnav a{\n  font-size: 1.4rem;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  font-family: 'Source Sans Pro', sans-serif;\n  color: white;\n  text-align: center;\n  text-decoration: none;\n  padding: 14px 16px;\n}\n\nnav a:hover{\n  background-color: #199DF8;\n}\n\nnav a:hover:not(.active) {\n  background-color: #199DF8;\n}\n\n/*.active {\n  background-color: #199DF8;\n}*/\n", ""]);
 	
 	// exports
 
@@ -41282,7 +41349,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*.home-body {\n  background-color: #266e9e;\n  height: 100vh;\n  position: relative;\n  overflow: hidden;\n}\n\n\n.home_page_background {\n  position: absolute;\n  right: 0;\n  bottom: -22%;\n  width: 50%;\n  opacity: 0.7;\n}\n\n\n.home_page_slogan {\n  font-size: 4.4rem;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  font-family: 'Indie Flower', cursive;\n  color: white;\n  text-align: center;\n  position: absolute;\n  bottom: 39%;\n  left: 8%;\n}\n\n.home_page_slogan:first-child {\n  color:red;\n}*/\n\n.bgImage {\n  background-position: center;\n  background-size: cover;\n  min-height: 100%;\n  height: 100vh;\n  background-image: url(" + __webpack_require__(280) + ");\n  background-color: red;\n}\n\n.display-container {\n  display: relative;\n}\n\n.gScale {\n  filter: grayscale(50%);\n}\n\n\n/* slogan */\n\n.display-left {\n  position: absolute;\n  top: 50%;\n  left: 0%;\n  transform: translate(0%, -50%);\n  -ms-transform: translate(-0%, -50%);\n}\n\n.text-white {\n  color: #fff!important;\n}\n\n.jumbo{\n  font-size:64px!important;\n  padding: 48px;\n}\n\n.large {\n  font-size: 18px!important;\n}\n\n.signUp-container {\n  padding: 48px;\n}\n\n.signUp-button {\n  border:none;\n  display:inline-block;\n  outline:0;\n  padding:8px 16px;\n  vertical-align:middle;\n  overflow:hidden;\n  text-decoration:none;\n  color:inherit;\n  background-color:inherit;\n  text-align:center;\n  cursor:pointer;\n  white-space:nowrap\n}\n\n.white {\n  color:#000!important;\n  background-color:#fff!important;\n}\n\n.padding-large {\n  padding:12px 24px!important;\n}\n\n.top-margin {\n  margin-top:16px!important;\n}\n\n.opaque, .hover-opacity {\n  opacity:0.60\n}\n\n.hide-small {\n  /*display: none!important;*/\n}\n", ""]);
+	exports.push([module.id, "/*.home-body {\n  background-color: #266e9e;\n  height: 100vh;\n  position: relative;\n  overflow: hidden;\n}\n\n\n.home_page_background {\n  position: absolute;\n  right: 0;\n  bottom: -22%;\n  width: 50%;\n  opacity: 0.7;\n}\n\n\n.home_page_slogan {\n  font-size: 4.4rem;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  font-family: 'Indie Flower', cursive;\n  color: white;\n  text-align: center;\n  position: absolute;\n  bottom: 39%;\n  left: 8%;\n}\n\n.home_page_slogan:first-child {\n  color:red;\n}*/\n\n.bgImage {\n  background-position: center;\n  background-size: cover;\n  min-height: 100%;\n  height: 100vh;\n  background-image: url(" + __webpack_require__(276) + ");\n  background-color: red;\n}\n\n.display-container {\n  display: relative;\n}\n\n.gScale {\n  filter: grayscale(50%);\n}\n\n\n/* slogan */\n\n.display-left {\n  position: absolute;\n  top: 50%;\n  left: 0%;\n  transform: translate(0%, -50%);\n  -ms-transform: translate(-0%, -50%);\n}\n\n.text-white {\n  color: #fff!important;\n}\n\n.jumbo{\n  font-size:64px!important;\n  padding: 48px;\n}\n\n.large {\n  font-size: 18px!important;\n}\n\n.signUp-container {\n  padding: 48px;\n}\n\n.signUp-button {\n  border:none;\n  display:inline-block;\n  outline:0;\n  padding:8px 16px;\n  vertical-align:middle;\n  overflow:hidden;\n  text-decoration:none;\n  color:inherit;\n  background-color:inherit;\n  text-align:center;\n  cursor:pointer;\n  white-space:nowrap\n}\n\n.white {\n  color:#000!important;\n  background-color:#fff!important;\n}\n\n.padding-large {\n  padding:12px 24px!important;\n}\n\n.top-margin {\n  margin-top:16px!important;\n}\n\n.opaque, .hover-opacity {\n  opacity:0.60\n}\n\n.hide-small {\n  /*display: none!important;*/\n}\n", ""]);
 	
 	// exports
 
@@ -41291,10 +41358,16 @@
 /* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "ea7e8d2499b26f4e26701df07d7b48d1.jpg";
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(277);
+	var content = __webpack_require__(278);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(269)(content, {});
@@ -41314,7 +41387,7 @@
 	}
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(268)();
@@ -41328,13 +41401,13 @@
 
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(279);
+	var content = __webpack_require__(280);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(269)(content, {});
@@ -41343,8 +41416,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!./profile_info.css", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!./profile_info.css");
+			module.hot.accept("!!../node_modules/css-loader/index.js!./card.css", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!./card.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -41354,7 +41427,7 @@
 	}
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(268)();
@@ -41362,16 +41435,90 @@
 	
 	
 	// module
-	exports.push([module.id, ".profile_photo {\n  height: 100px;\n  width: 100px;\n  border: 1px solid black;\n  border-radius: 5px;\n}\n", ""]);
+	exports.push([module.id, ".card_wrapper {\n  width: 100%;\n}\n\n.card-2 {\n  box-shadow:0 2px 5px 0 rgba(0,0,0,0.4),0 2px 10px 0 rgba(0,0,0,0.4);\n}\n\n.profile_photo {\n  height: 50vh;\n  width: 100%;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center center;\n}\n\n.descript-container::before {\n  padding: 0.01em 16px;\n}\n\n.descript-container {\n  padding: 5px;\n}\n\nh1 {\n  font-size: 30px;\n  font-weight: 400;\n  margin: 2px 0;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.read_more {\n  display: inline-block;\n  vertical-align: middle;\n  overflow: hidden;\n  text-decoration: none;\n  text-align: center;\n  white-space: nowrap;\n  outline: 0;\n  border: 1px solid black;\n  height: 25px;\n  width: 150px;\n  padding: 12px 24px 12px 24px;\n}\n\n.read_more a {\n  text-decoration: none;\n  font-family: 'Source Sans Pro', sans-serif;\n  font-weight: 500;\n  color: black;\n  letter-spacing: 0.5px;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "ea7e8d2499b26f4e26701df07d7b48d1.jpg";
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(282);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(269)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!./profile_page.css", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!./profile_page.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(268)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".profile_body{\n  background-color: #fdfcfc;\n  display: flex;\n  justify-content: center;\n  margin: 0% 1% 0% 1%;\n  overflow: none;\n  max-width: 90%;\n  margin: auto;\n}\n\n.left-column {\n  width: 66.66666%;\n}\n\n.right-column {\n  width: 33.33333%;\n}\n\n.column {\n  display: flex;\n  flex-direction: column;\n  padding: 17px;\n}\n\n.column h1 {\n  font-size: 30px;\n  margin-bottom: 15px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.column p {\n  font-size: 20px;\n  margin-bottom: 15px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.column h2 {\n  margin-bottom: 15px;\n  font-size: 20px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(284);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(269)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!./reset.css", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!./reset.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 284 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(268)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n", ""]);
+	
+	// exports
+
 
 /***/ })
 /******/ ]);
