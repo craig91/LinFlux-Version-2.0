@@ -1,0 +1,41 @@
+.profile_body{
+  background-color: #fdfcfc;
+  display: flex;
+  justify-content: center;
+  margin: 0% 1% 0% 1%;
+  overflow: none;
+  max-width: 90%;
+  margin: auto;
+}
+
+.left-column {
+  width: 66.66666%;
+}
+
+.right-column {
+  width: 33.33333%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: 17px;
+}
+
+.column h1 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.column p {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.column h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
