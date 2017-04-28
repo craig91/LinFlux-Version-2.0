@@ -15,7 +15,7 @@ User.sync({force: true})
 
 {
   userName: 'foxyKyot0',
-  userPhoto: '',
+  userPhoto: 'https://scontent-lga3-1.xx.fbcdn.net/v/t31.0-8/12898404_1180328825335101_7579305621754036883_o.jpg?oh=6dfa632cb5d4e87f7aa0ade86f6e6433&oe=59BF09EB',
   password:'456',
   firstName: 'Ayuka',
   lastName: 'Niga',
@@ -25,7 +25,7 @@ User.sync({force: true})
 
 {
   userName: 'NeuroManc3er',
-  userPhoto: '',
+  userPhoto: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/1915715_357593280227_1527802_n.jpg?oh=6dfd6dd41c6f5a005803ae50eb1da85a&oe=59C020DA',
   password:'789',
   firstName: 'Kamil',
   lastName: 'Skorupa',
