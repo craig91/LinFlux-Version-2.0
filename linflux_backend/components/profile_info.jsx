@@ -30,7 +30,7 @@ const ProfileInfo = React.createClass({
           <div className="profile_photo_container">
             <div className="profile_photo_2" style={{backgroundImage: `url(${this.state.user.userPhoto})` }}></div>
           </div>
-
+          
 
             <div className="white descript-container2">
               <h1>{this.state.user.userName}</h1>

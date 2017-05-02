@@ -76,15 +76,15 @@
 	
 	var _profile2 = _interopRequireDefault(_profile);
 	
-	var _homepage = __webpack_require__(248);
+	var _homepage = __webpack_require__(265);
 	
 	var _homepage2 = _interopRequireDefault(_homepage);
 	
-	var _distros = __webpack_require__(251);
+	var _distros = __webpack_require__(250);
 	
 	var _distros2 = _interopRequireDefault(_distros);
 	
-	var _articleForm = __webpack_require__(250);
+	var _articleForm = __webpack_require__(249);
 	
 	var _articleForm2 = _interopRequireDefault(_articleForm);
 	
@@ -92,15 +92,15 @@
 	
 	var _profile_info2 = _interopRequireDefault(_profile_info);
 	
-	var _nav_bar = __webpack_require__(249);
+	var _nav_bar = __webpack_require__(248);
 	
 	var _nav_bar2 = _interopRequireDefault(_nav_bar);
 	
-	var _login = __webpack_require__(252);
+	var _login = __webpack_require__(251);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	var _profile_page = __webpack_require__(254);
+	var _profile_page = __webpack_require__(253);
 	
 	var _profile_page2 = _interopRequireDefault(_profile_page);
 	
@@ -38630,7 +38630,7 @@
 	
 	var _profile_info2 = _interopRequireDefault(_profile_info);
 	
-	var _nav_bar = __webpack_require__(249);
+	var _nav_bar = __webpack_require__(248);
 	
 	var _nav_bar2 = _interopRequireDefault(_nav_bar);
 	
@@ -38906,98 +38906,6 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(182);
-	
-	var _nav_bar = __webpack_require__(249);
-	
-	var _nav_bar2 = _interopRequireDefault(_nav_bar);
-	
-	var _userForm = __webpack_require__(244);
-	
-	var _userForm2 = _interopRequireDefault(_userForm);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Home = function (_React$Component) {
-	    _inherits(Home, _React$Component);
-	
-	    function Home() {
-	        _classCallCheck(this, Home);
-	
-	        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
-	    }
-	
-	    _createClass(Home, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: ' bgImage display-container gScale' },
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    _react2.default.createElement(_nav_bar2.default, null)
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'display-left text-white' },
-	                    _react2.default.createElement(
-	                        'span',
-	                        { className: 'jumbo hide-small' },
-	                        'Is Linux really hard?'
-	                    ),
-	                    _react2.default.createElement(
-	                        'span',
-	                        { className: 'large' },
-	                        'Start learning Linux here.'
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        { className: 'signUp-container' },
-	                        _react2.default.createElement(
-	                            _reactRouter.Link,
-	                            { to: '/userForm', className: 'signUp-button white padding-large large top-margin opaque hover-opacity' },
-	                            'Sign Up'
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Home;
-	}(_react2.default.Component);
-	
-	exports.default = Home;
-	
-	
-	{/* <div className="home_page_slogan">
-	      <p>You & Linux</p>
-	      <p>A Love story</p>
-	    </div> */}
-
-/***/ }),
-/* 249 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	
@@ -39009,11 +38917,11 @@
 	
 	var _hello2 = _interopRequireDefault(_hello);
 	
-	var _articleForm = __webpack_require__(250);
+	var _articleForm = __webpack_require__(249);
 	
 	var _articleForm2 = _interopRequireDefault(_articleForm);
 	
-	var _distros = __webpack_require__(251);
+	var _distros = __webpack_require__(250);
 	
 	var _distros2 = _interopRequireDefault(_distros);
 	
@@ -39021,7 +38929,7 @@
 	
 	var _userForm2 = _interopRequireDefault(_userForm);
 	
-	var _login = __webpack_require__(252);
+	var _login = __webpack_require__(251);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
@@ -39029,11 +38937,11 @@
 	
 	var _profile2 = _interopRequireDefault(_profile);
 	
-	var _profile_page = __webpack_require__(254);
+	var _profile_page = __webpack_require__(253);
 	
 	var _profile_page2 = _interopRequireDefault(_profile_page);
 	
-	var _reactModal = __webpack_require__(255);
+	var _reactModal = __webpack_require__(254);
 	
 	var _reactModal2 = _interopRequireDefault(_reactModal);
 	
@@ -39112,7 +39020,7 @@
 	exports.default = NavBar;
 
 /***/ }),
-/* 250 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39212,7 +39120,7 @@
 	exports.default = ArticleForm;
 
 /***/ }),
-/* 251 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39301,7 +39209,7 @@
 	exports.default = Distros;
 
 /***/ }),
-/* 252 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39314,7 +39222,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _logout = __webpack_require__(253);
+	var _logout = __webpack_require__(252);
 	
 	var _logout2 = _interopRequireDefault(_logout);
 	
@@ -39390,7 +39298,7 @@
 	exports.default = LoginForm;
 
 /***/ }),
-/* 253 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39457,7 +39365,7 @@
 	exports.default = LogoutButton;
 
 /***/ }),
-/* 254 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39525,27 +39433,27 @@
 	exports.default = ProfilePage;
 
 /***/ }),
-/* 255 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(256);
+	module.exports = __webpack_require__(255);
 	
 
 
 /***/ }),
-/* 256 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(36);
 	var PropTypes = __webpack_require__(185);
-	var ExecutionEnvironment = __webpack_require__(257);
-	var ModalPortal = React.createFactory(__webpack_require__(258));
-	var ariaAppHider = __webpack_require__(263);
-	var refCount = __webpack_require__(264);
-	var elementClass = __webpack_require__(265);
+	var ExecutionEnvironment = __webpack_require__(256);
+	var ModalPortal = React.createFactory(__webpack_require__(257));
+	var ariaAppHider = __webpack_require__(262);
+	var refCount = __webpack_require__(263);
+	var elementClass = __webpack_require__(264);
 	var renderSubtreeIntoContainer = __webpack_require__(36).unstable_renderSubtreeIntoContainer;
-	var Assign = __webpack_require__(262);
+	var Assign = __webpack_require__(261);
 	var createReactClass = __webpack_require__(190)
 	
 	var SafeHTMLElement = ExecutionEnvironment.canUseDOM ? window.HTMLElement : {};
@@ -39706,7 +39614,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 257 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -39751,14 +39659,14 @@
 
 
 /***/ }),
-/* 258 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	var div = React.DOM.div;
-	var focusManager = __webpack_require__(259);
-	var scopeTab = __webpack_require__(261);
-	var Assign = __webpack_require__(262);
+	var focusManager = __webpack_require__(258);
+	var scopeTab = __webpack_require__(260);
+	var Assign = __webpack_require__(261);
 	var createReactClass = __webpack_require__(190);
 	
 	// so that our CSS is statically analyzable
@@ -39963,10 +39871,10 @@
 
 
 /***/ }),
-/* 259 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(260);
+	var findTabbable = __webpack_require__(259);
 	var focusLaterElements = [];
 	var modalElement = null;
 	var needToFocus = false;
@@ -40037,7 +39945,7 @@
 
 
 /***/ }),
-/* 260 */
+/* 259 */
 /***/ (function(module, exports) {
 
 	/*!
@@ -40093,10 +40001,10 @@
 
 
 /***/ }),
-/* 261 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(260);
+	var findTabbable = __webpack_require__(259);
 	
 	module.exports = function(node, event) {
 	  var tabbable = findTabbable(node);
@@ -40118,7 +40026,7 @@
 
 
 /***/ }),
-/* 262 */
+/* 261 */
 /***/ (function(module, exports) {
 
 	/**
@@ -40761,7 +40669,7 @@
 
 
 /***/ }),
-/* 263 */
+/* 262 */
 /***/ (function(module, exports) {
 
 	var _element = typeof document !== 'undefined' ? document.body : null;
@@ -40809,7 +40717,7 @@
 
 
 /***/ }),
-/* 264 */
+/* 263 */
 /***/ (function(module, exports) {
 
 	var modals = [];
@@ -40834,7 +40742,7 @@
 
 
 /***/ }),
-/* 265 */
+/* 264 */
 /***/ (function(module, exports) {
 
 	module.exports = function(opts) {
@@ -40897,6 +40805,98 @@
 	  else this.add(className)
 	}
 
+
+/***/ }),
+/* 265 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(182);
+	
+	var _nav_bar = __webpack_require__(248);
+	
+	var _nav_bar2 = _interopRequireDefault(_nav_bar);
+	
+	var _userForm = __webpack_require__(244);
+	
+	var _userForm2 = _interopRequireDefault(_userForm);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Home = function (_React$Component) {
+	    _inherits(Home, _React$Component);
+	
+	    function Home() {
+	        _classCallCheck(this, Home);
+	
+	        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+	    }
+	
+	    _createClass(Home, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: ' bgImage display-container gScale' },
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(_nav_bar2.default, null)
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'display-left text-white' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'jumbo hide-small' },
+	                        'Is Linux really hard?'
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'large' },
+	                        'Start learning Linux here.'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        { className: 'signUp-container' },
+	                        _react2.default.createElement(
+	                            _reactRouter.Link,
+	                            { to: '/userForm', className: 'signUp-button white padding-large large top-margin opaque hover-opacity' },
+	                            'Sign Up'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Home;
+	}(_react2.default.Component);
+	
+	exports.default = Home;
+	
+	
+	{/* <div className="home_page_slogan">
+	      <p>You & Linux</p>
+	      <p>A Love story</p>
+	    </div> */}
 
 /***/ }),
 /* 266 */
