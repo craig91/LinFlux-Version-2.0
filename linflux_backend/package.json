@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "postinstall": "psql linflux < node_modules/connect-pg-simple/table.sql",
+    "postinstall": "sudo -u postgres psql linflux < node_modules/connect-pg-simple/table.sql",
     "start": "webpack --watch & nodemon server.js",
     "seed": "node ./seed/user_seed.js && node ./seed/article_seed.js && node ./seed/distros_seed.js ",
     "test": "mocha --watch"
