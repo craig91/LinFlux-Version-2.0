@@ -20,7 +20,7 @@ User.sync({force: true})
   firstName: 'Ayuka',
   lastName: 'Niga',
   location: 'Kyoto',
-  company: 'Japas'
+  company: 'Japas' 
 },
 
 {
