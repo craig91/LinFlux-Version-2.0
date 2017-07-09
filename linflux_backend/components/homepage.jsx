@@ -11,6 +11,7 @@ class Home extends React.Component {
             <div className=" bgImage display-container gScale">
               <div><NavBar/></div>
               <div className="display-left text-white">
+                  <div className="mascot"><img src="../public/images/flat_penguin.png" alt=""/></div>
                 <span className="jumbo hide-small">Is Linux really hard?</span>
 
                 <span className="large">Start learning Linux here.</span>
