@@ -19,6 +19,7 @@ const LoginForm = React.createClass({
        }
       }).done((data) => {
         this.setState({ user: data })
+        // this.props.router.push('/profile_page')
         console.log(data)
       }).catch((error) => {
         console.log(error)

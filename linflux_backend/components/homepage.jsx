@@ -11,17 +11,13 @@ class Home extends React.Component {
             <div className=" bgImage display-container gScale">
               <div><NavBar/></div>
               <div className="display-left text-white">
-                  <div className="mascot"><img src="../public/images/flat_penguin.png" alt=""/></div>
+                  {/*<div className="mascot"><img src="../public/images/flat_penguin.png" alt=""/></div>*/}
                 <span className="jumbo hide-small">Is Linux really hard?</span>
 
                 <span className="large">Start learning Linux here.</span>
                 <p className="signUp-container"><Link to="/userForm" className="signUp-button white padding-large large top-margin opaque hover-opacity">Sign Up</Link></p>
 
               </div>
-
-
-                  {/* <img className="bgImage" src="../public/images/dark.jpg"></img> */}
-
             </div>
         )
     }

@@ -38939,6 +38939,7 @@
 	        }
 	      }).done(function (data) {
 	        _this.setState({ user: data });
+	        // this.props.router.push('/profile_page')
 	        console.log(data);
 	      }).catch(function (error) {
 	        console.log(error);
@@ -40710,10 +40711,6 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _flat_penguin = __webpack_require__(288);
-	
-	var _image = _interopRequireWildcard(_flat_penguin);
-	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -40729,8 +40726,6 @@
 	var _userForm2 = _interopRequireDefault(_userForm);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -40761,11 +40756,6 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'display-left text-white' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'mascot' },
-	                        _react2.default.createElement('img', { src: _image.default, alt: '' })
-	                    ),
 	                    _react2.default.createElement(
 	                        'span',
 	                        { className: 'jumbo hide-small' },
@@ -41264,13 +41254,18 @@
 	
 	
 	// module
-	exports.push([module.id, "/*.home-body {\n  background-color: #266e9e;\n  height: 100vh;\n  position: relative;\n  overflow: hidden;\n}\n\n\n.home_page_background {\n  position: absolute;\n  right: 0;\n  bottom: -22%;\n  width: 50%;\n  opacity: 0.7;\n}\n\n\n.home_page_slogan {\n  font-size: 4.4rem;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  font-family: 'Indie Flower', cursive;\n  color: white;\n  text-align: center;\n  position: absolute;\n  bottom: 39%;\n  left: 8%;\n}\n\n.home_page_slogan:first-child {\n  color:red;\n}*/\n\n.bgImage {\n  background-position: center;\n  background-size: cover;\n  min-height: 100%;\n  height: 100vh;\n  background-image: url(" + __webpack_require__(287) + ");\n  background-color: red;\n}\n\n.display-container {\n  display: relative;\n}\n\n.gScale {\n  filter: grayscale(50%);\n}\n\n\n/* slogan */\n\n.display-left {\n  position: absolute;\n  top: 50%;\n  left: 0%;\n  transform: translate(0%, -50%);\n  -ms-transform: translate(-0%, -50%);\n}\n\n.text-white {\n  color: #fff!important;\n}\n\n.jumbo{\n  font-size:64px!important;\n  padding: 48px;\n}\n\n.large {\n  font-size: 18px!important;\n}\n\n.signUp-container {\n  padding: 48px;\n}\n\n.signUp-button {\n  border:none;\n  display:inline-block;\n  outline:0;\n  padding:8px 16px;\n  vertical-align:middle;\n  overflow:hidden;\n  text-decoration:none;\n  color:inherit;\n  background-color:inherit;\n  text-align:center;\n  cursor:pointer;\n  white-space:nowrap\n}\n\n.white {\n  color:#000!important;\n  background-color:#fff!important;\n}\n\n.padding-large {\n  padding:12px 24px!important;\n}\n\n.top-margin {\n  margin-top:16px!important;\n}\n\n.opaque, .hover-opacity {\n  opacity:0.60\n}\n\n.hide-small {\n  /*display: none!important;*/\n}\n", ""]);
+	exports.push([module.id, "/*.home-body {\n  background-color: #266e9e;\n  height: 100vh;\n  position: relative;\n  overflow: hidden;\n}   \n\n\n.home_page_background {\n  position: absolute;\n  right: 0;\n  bottom: -22%;\n  width: 50%;\n  opacity: 0.7;\n}\n\n\n.home_page_slogan {\n  font-size: 4.4rem;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  font-family: 'Indie Flower', cursive;\n  color: white;\n  text-align: center;\n  position: absolute;\n  bottom: 39%;\n  left: 8%;\n}\n\n.home_page_slogan:first-child {\n  color:red;\n}*/\n\n.bgImage {\n  background-position: center;\n  background-size: cover;\n  min-height: 100%;\n  height: 100vh;\n  background-image: url(" + __webpack_require__(278) + ");\n  background-color: red;\n}\n\n.display-container {\n  display: relative;\n}\n\n.gScale {\n  filter: grayscale(50%);\n}\n\n\n/* slogan */\n\n.display-left {\n  position: absolute;\n  top: 50%;\n  left: 0%;\n  transform: translate(0%, -50%);\n  -ms-transform: translate(-0%, -50%);\n}\n\n.text-white {\n  color: #fff!important;\n}\n\n.jumbo{\n  font-size:64px!important;\n  padding: 48px;\n}\n\n.large {\n  font-size: 18px!important;\n}\n\n.signUp-container {\n  padding: 48px;\n}\n\n.signUp-button {\n  border:none;\n  display:inline-block;\n  outline:0;\n  padding:8px 16px;\n  vertical-align:middle;\n  overflow:hidden;\n  text-decoration:none;\n  color:inherit;\n  background-color:inherit;\n  text-align:center;\n  cursor:pointer;\n  white-space:nowrap\n}\n\n.white {\n  color:#000!important;\n  background-color:#fff!important;\n}\n\n.padding-large {\n  padding:12px 24px!important;\n}\n\n.top-margin {\n  margin-top:16px!important;\n}\n\n.opaque, .hover-opacity {\n  opacity:0.60\n}\n\n.hide-small {\n  /*display: none!important;*/\n}\n", ""]);
 	
 	// exports
 
 
 /***/ }),
-/* 278 */,
+/* 278 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "2bb582d2b8ecb0b7fb67c54d80124a06.png";
+
+/***/ }),
 /* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41429,18 +41424,6 @@
 	
 	// exports
 
-
-/***/ }),
-/* 287 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "2bb582d2b8ecb0b7fb67c54d80124a06.png";
-
-/***/ }),
-/* 288 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "f0c4592fed3349894492a5ce417393af.png";
 
 /***/ })
 /******/ ]);

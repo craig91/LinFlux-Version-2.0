@@ -4,7 +4,7 @@ const User = require('../models').User;
 User.sync({force: true})
 .then(()=> User.bulkCreate([
 {
-  userName: 'XxBkLyN sHoTsxX',
+  userName: 'XxBkLyNsHoTsxX',
   userPhoto: 'https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAbDAAAAJDhkZWM5MTA2LWNjZTMtNDNmMy04OWM0LTU2MzEyMDY1NTg4Yw.jpg',
   password:'123',
   firstName: 'Craig',
